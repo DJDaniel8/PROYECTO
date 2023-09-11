@@ -138,7 +138,6 @@
         <div class="container">
             <h2>Lista de Clientes</h2>
             <table class="table table-hover table-bordered">
-                <th>ID</th>
                 <th>NOMBRE</th>
                 <th>APELLIDO</th>
                 <th>GENERO</th>
@@ -149,7 +148,6 @@
                 <th>Opciones</th>
         
                 <tr>
-                <td>1</td>
                 <td>Daniel</td>
                 <td>Fuentes</td>
                 <td>Masculino</td>
@@ -231,12 +229,8 @@
                                 <!-- Contenido del Modal -->
                                 <div class="modal-body">
                                     <div class=" formulario">
-                                        <h2>Eliminar Clientes</h2>
-                                            <label for="">ID</label>
-                                            <input type="text" readonly>
-                                            <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreEliminar">
-                                        </div>
+                                        <h2>Desea eliminar el Cliente?</h2>
+                                    </div>
                                 </div>
                                 <!-- Pie del Modal -->
                                 <div class="modal-footer">
@@ -248,7 +242,7 @@
                     </div>
               </form>  
 
-              <form method="post" id="agregarCliente">
+              <form method="post" id="agregarCliente" action="<?php echo constant('URL').'Clientes/Crear' ?>">
                   <!--AGREGAR CLIENTE-->
                         <!-- Modal -->
                     <div class="modal" id="miModal">
@@ -262,7 +256,7 @@
                                 <!-- Contenido del Modal -->
                                 <div class="modal-body">
                                     <div class=" formulario">
-                                        <form action="">
+                                        
                                         <h2>Agregar Cliente</h2>
                                             <label for="">NOMBRE</label>
                                             <input type="text" id="nombreCrear">
@@ -285,7 +279,7 @@
                 
                         
                                             <button type="submit " class="btn btn-success">Agregar cliente</button>
-                                        </form>
+                                        
                                         </div>
                                     
                                 </div>
@@ -304,6 +298,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/clienteApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/clienteApp.js"></script>
 </body>
 </html>
