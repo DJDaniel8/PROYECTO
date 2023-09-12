@@ -97,11 +97,10 @@ class ClientesModel extends ModelBase {
             return false;
         }
 
-        return false;
     }
 
     public function getLastId(){
-        $query = "SELECT TOP(1) * From Clientes ORDER BY categoriaId desc";
+        $query = "SELECT TOP(1) * From Clientes ORDER BY clienteId desc";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
 

@@ -1,5 +1,7 @@
 <?php
 
+require_once 'models/Proveedor.php';
+
 class ProveedoresController extends ControllerBase{
 
 
@@ -21,6 +23,11 @@ class ProveedoresController extends ControllerBase{
                 $this->redirect('Login/');
             }
         }
+    }
+
+    function loadModel($model){
+        parent::loadModel($model);
+        $this->Listar();
     }
 
     function validarAcceso(){
@@ -70,7 +77,7 @@ class ProveedoresController extends ControllerBase{
         $respuesta = array(
             'Respuesta' => $res,
             'Mensaje' => $mensaje,
-            'Valor' => $id
+            'Valor' => $proveedor
         );
 
         header('Content-Type: application/json');

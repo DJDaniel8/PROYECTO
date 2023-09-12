@@ -183,26 +183,26 @@
                             </div>
                             <!-- Contenido del Modal -->
                             <div class="modal-body">
-                                    <form action="">
+                                    
                                     <h2>Actualizar cliente</h2>
                                         <label for="">NOMBRE</label>
-                                        <input type="text" id="nombreActualizar">
+                                        <input type="text" id="nombreActualizar" name="nombre">
                                         <label for="">APELLIDO</label>
-                                        <input type="text" id="apellidoActualizar">
+                                        <input type="text" id="apellidoActualizar" name="apellido">
                                         <label for="">GENERO</label>
-                                        <select name="" id="generoActualizar">
+                                        <select name="genero" id="generoActualizar">
                                             <option></option>
                                             <option value="masculino">Masculino</option>
                                             <option value="femenino">Femenino</option>
                                         </select>
                                         <label for="">NIT</label>
-                                        <input type="text" id="nitActualizar">
+                                        <input type="text" id="nitActualizar" name="nit">
                                         <label for="">DIRECCION</label>
-                                        <input type="text" id="direccionActualizar">
+                                        <input type="text" id="direccionActualizar" name="direccion">
                                         <label for="">TELEFONO</label>
-                                        <input type="text" id="telefonoActualizar">
+                                        <input type="text" id="telefonoActualizar" name="telefono">
                                         <label for="">EMAIL</label>
-                                        <input type="text" id="emailActualizar">
+                                        <input type="text" id="emailActualizar" name="email">
                                         <!--Pie de modal-->
                                         <button type="submit" class="btn btn-success">Agregar personal</button>
                                         <div class="modal-footer">
@@ -259,23 +259,23 @@
                                         
                                         <h2>Agregar Cliente</h2>
                                             <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreCrear">
+                                            <input type="text" id="nombreCrear" name="nombre">
                                             <label for="">APELLIDO</label>
-                                            <input type="text" id="apellidoCrear">
+                                            <input type="text" id="apellidoCrear" name="apellido">
                                             <label for="">GENERO</label>
-                                            <select name="" id="generoCrear">
+                                            <select name="genero" id="generoCrear">
                                                 <option ></option>
-                                                <option value="masculino">Masculino</option>
-                                                <option value="femenino">Femenino</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
                                             </select>
                                             <label for="">NIT</label>
-                                            <input type="text" id="nitCrear">
+                                            <input type="text" id="nitCrear" name="nit">
                                             <label for="">DIRECCION</label>
-                                            <input type="text" id="direccionCrear">
+                                            <input type="text" id="direccionCrear" name="direccion">
                                             <label for="">TELEFONO</label>
-                                            <input type="text" id="telefonoCrear">
+                                            <input type="text" id="telefonoCrear" name="telefono">
                                             <label for="">EMAIL</label>
-                                            <input type="text" id="emailCrear">
+                                            <input type="text" id="emailCrear" name="email">
                 
                         
                                             <button type="submit " class="btn btn-success">Agregar cliente</button>

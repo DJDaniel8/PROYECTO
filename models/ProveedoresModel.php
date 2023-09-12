@@ -1,5 +1,7 @@
 <?php
 
+require_once 'models/Proveedor.php';
+
 class ProveedoresModel extends ModelBase {
 
     public function __construct()
@@ -37,6 +39,7 @@ class ProveedoresModel extends ModelBase {
         
         while ($row = $resultadoQuery->fetch()) {
             $proveedor = new Proveedor();
+            $proveedor->id = $row['proveedorId'];
             $proveedor->razonSocial = $row['razonSocial'];
             $proveedor->direccion = $row['direccion'];
             $proveedor->telefono = $row['telefono'];
@@ -52,7 +55,7 @@ class ProveedoresModel extends ModelBase {
         $query = "UPDATE Proveedores SET razonSocial = :razonSocial, direccion = :direccion, telefono = :telefono WHERE proveedorId = :id";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
-        $resultadoQuery->bindParam(':id', $id, PDO::PARAM_INT);
+        $resultadoQuery->bindParam(':id', $proveedor->id, PDO::PARAM_INT);
         $resultadoQuery->bindParam(':razonSocial', $proveedor->razonSocial, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':direccion', $proveedor->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $proveedor->telefono, PDO::PARAM_STR);
@@ -96,7 +99,7 @@ class ProveedoresModel extends ModelBase {
             
         if($row = $resultadoQuery->fetch())
         {
-            return $row['categoriaId'];
+            return intval($row['proveedorId']);
         }
         else{
             return 0;

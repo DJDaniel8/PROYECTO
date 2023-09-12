@@ -49,17 +49,22 @@ class ClientesController extends ControllerBase{
         $this->redirect('Login/');
     }
 
+    function loadModel($model){
+        parent::loadModel($model);
+        $this->Listar();
+    }
+
     function Crear(){
         $mensaje = "";
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $cliente = new Cliente();
-            $cliente->nombre = $_POST['nombreCrear'];
-            $cliente->apellido = $_POST['apellidoCrear'];
-            $cliente->sexo = $_POST['generoCrear'];
-            $cliente->nit = $_POST['nitCrear'];
-            $cliente->direccion = $_POST['direccionCrear'];
-            $cliente->telefono = $_POST['telefonoCrear'];
-            $cliente->email = $_POST['emailCrear'];
+            $cliente->nombre = $_POST['nombre'];
+            $cliente->apellido = $_POST['apellido'];
+            $cliente->sexo = $_POST['genero'];
+            $cliente->nit = $_POST['nit'];
+            $cliente->direccion = $_POST['direccion'];
+            $cliente->telefono = $_POST['telefono'];
+            $cliente->email = $_POST['email'];
 
             $res = $this->model->insert($cliente);
             $id = $this->model->getLastId();
@@ -82,6 +87,7 @@ class ClientesController extends ControllerBase{
         header('Content-Type: application/json');
         echo json_encode($respuesta);
     }
+    
 
     function Listar(){
         $res = $this->model->read();
@@ -94,14 +100,14 @@ class ClientesController extends ControllerBase{
     function Actualizar(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $cliente = new Cliente();
-            $cliente->id = intval($_POST['idActualizar']);
-            $cliente->nombre = $_POST['nombreActualizar'];
-            $cliente->apellido = $_POST['apellidoActualizar'];
-            $cliente->sexo = $_POST['generoActualizar'];
-            $cliente->nit = $_POST['nitActualizar'];
-            $cliente->direccion = $_POST['direccionActualizar'];
-            $cliente->telefono = $_POST['telefonoActualizar'];
-            $cliente->email = $_POST['emailActualizar'];
+            $cliente->id = intval($_POST['id']);
+            $cliente->nombre = $_POST['nombre'];
+            $cliente->apellido = $_POST['apellido'];
+            $cliente->sexo = $_POST['genero'];
+            $cliente->nit = $_POST['nit'];
+            $cliente->direccion = $_POST['direccion'];
+            $cliente->telefono = $_POST['telefono'];
+            $cliente->email = $_POST['email'];
             $res = $this->model->update($cliente);
             
             if($res){
@@ -125,7 +131,7 @@ class ClientesController extends ControllerBase{
 
     function Eliminar(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $id = intval($_POST['idEliminar']);
+            $id = intval($_POST['id']);
 
             $res = $this->model->delete($id);
             

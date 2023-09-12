@@ -138,30 +138,36 @@
         <div class="container">
             <h2>Lista de categoria</h2>
             <table class="table table-hover table-bordered">
-                <th>ID</th>
-                <th>RAZON SOCIAL</th>
-                <th>TELEFONO</th>
-                <th>Opciones</th>
-        
-                <tr>
-                <td>1</td>
-                <td>:C </td>
-                <td>5454524</td>
+                <tbody id="CuerpoTabla">
+                    <tr>
+                        <th>RAZON SOCIAL</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                    
+                    <?php
 
-    
-               
-                <td>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-            Eliminar
-        </button>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-            Actualizar
-        </button>
-                        
-                    </td>
-                </tr>
+                    foreach ($this->model as $row) {
+                        echo '<tr model-target="'.$row->id.'">';
+                        echo "<td>{$row->razonSocial}</td>";
+                        echo "<td>{$row->direccion}</td>";
+                        echo "<td>{$row->telefono}</td>";
+                        echo "<td>";
+                        echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
+                                Eliminar
+                                </button>';
+                        echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->razonSocial."','".$row->direccion."','".$row->telefono."')".'">
+                                    Actualizar
+                                </button>';
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+
+
+                    ?>
+                    
+                </tbody>
             </table>
         </div>
         <!--ACTUALIZAR PRODUCTO-->
@@ -179,14 +185,12 @@
                             <div class="modal-body">
                                 <div class=" formulario">
                                     <h2>Actualizar Proveedor</h2>
-                                        <label for="">ID</label>
-                                        <input type="text">
                                         <label for="">RAZON SOCIAL</label>
-                                        <input type="text" id="razonActualizar">
+                                        <input type="text" id="razonActualizar" name="razonSocial">
                                         <label for="">DIRECCION</label>
-                                        <input type="text" id="direccionActualizar">
+                                        <input type="text" id="direccionActualizar" name="direccion">
                                         <label for="">TELEFONO</label>
-                                        <input type="text" id="telefonoActualizar">
+                                        <input type="text" id="telefonoActualizar" name="telefono">
                  
                                         <button type="submit" class="btn btn-success">Agregar Proveedor</button>
                                     </div>
@@ -204,7 +208,7 @@
                </form>
         <!--ELIMINAR PRODUCTO-->
                 <!-- Modal -->
-            <form method="post" id="eliminarProveedor">
+                <form method="post" id="eliminarProveedor">
                 <div class="modal" id="ModalEliminar">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -218,15 +222,8 @@
                             <div class="modal-body">
                                 <div class=" formulario">
                                     
-                                    <h2>Eliminar Proveedor</h2>
-                                        <label for="">ID</label>
-                                        <input type="text" readonly>
-                                
-                                        <label for="">RAZON SOCIAL</label>
-                                        <input type="text" id="razonEliminar">
-
-                                    
-                                    </div>
+                                    <h2>Eliminar Proveedor</h2>             
+                                </div>
                                 
                             </div>
         

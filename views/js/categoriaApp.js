@@ -222,6 +222,7 @@ function ActualizarCategoria(id, nombre){
             .then(data => {
                 console.log(data);
                 mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
+                if(data.Respuesta) actualizarFila(id, nombre);
             })
             .catch(error => {
                 console.error( error);
@@ -229,6 +230,18 @@ function ActualizarCategoria(id, nombre){
             });
         }
     });
+}
+
+function actualizarFila(id, nombre){
+    var fila = document.querySelector('tr[model-target="'+id+'"]');
+    fila.cells[0].textContent = nombre;
+    var boton = fila.querySelector('button[data-toggle]');
+    if (boton) {
+        boton.onclick = function() {
+            Actualizar(id, nombre); 
+        };
+    }
+    
 }
 
 function LimpiarActualizar()
