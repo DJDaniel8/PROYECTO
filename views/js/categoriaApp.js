@@ -1,5 +1,6 @@
 var categoriaId;
 var nombreCategoria;
+var url="http://localhost/PROYECTO/";
 
 document.getElementById("crearCategoria").addEventListener("submit", function(event) {
     event.preventDefault(); // Detener la recarga automática de la página
@@ -46,7 +47,7 @@ function enviarFormulario() {
     const formData = new FormData(formulario);
     const nombreCategoria = formData.get("nombreCategoria");
   
-    fetch("http://localhost/PROYECTO/Categorias/Crear", {
+    fetch(url+"Categorias/Crear", {
       method: "POST",
       body: formData,
     })
@@ -85,7 +86,7 @@ function Eliminar(id){
         if (result.isConfirmed) {
             const formulario = new FormData();
             formulario.append('categoriaId', id);
-            fetch("http://localhost/PROYECTO/Categorias/Eliminar", {
+            fetch(url+"Categorias/Eliminar", {
             method: "POST",
             body: formulario,
             })
@@ -111,6 +112,7 @@ function Eliminar(id){
 
 function EliminarFila(id){
     var fila = document.querySelector('tr[model-target="'+id+'"]');
+    
     fila.remove();
 }
 
@@ -206,7 +208,7 @@ function ActualizarCategoria(id, nombre){
             const formulario = new FormData();
             formulario.append('categoriaId', id);
             formulario.append('nombreCategoria', nombre)
-            fetch("http://localhost/PROYECTO/Categorias/Actualizar", {
+            fetch(url+"/Categorias/Actualizar", {
             method: "POST",
             body: formulario,
             })

@@ -138,13 +138,11 @@
         <div class="container">
             <h2>Lista de personal</h2>
             <table class="table table-hover table-bordered">
-                <th>ID</th>
                 <th>NOMBRE</th>
                 <th>APELLIDO</th>
                 <th>GENERO</th>
                 <th>PUESTO</th>
                 <th>USUARIO</th>
-                <th>CONTRASEÑA</th>
                 <th>DIRECCION</th>
                 <th>TELEFONO</th>
                 <th>EMAIL</th>
@@ -153,13 +151,11 @@
                 <th>OPCIONES</th>
         
                 <tr>
-                <td>1</td>
                 <td>Daniel</td>
                 <td>Fuentes</td>
                 <td>Masculino</td>
                 <td>Gerente</td>
                 <td>DanielFue</td>
-                <td>Erickson123</td>
                 <td>San marcos</td>
                 <td>5487-0220</td>
                 <td>fuentes@gmail.com</td>
@@ -196,31 +192,29 @@
                                     <div class=" formulario">
                                         <h2>Actualizar personal</h2>
                                             <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreActualizar">
+                                            <input type="text" id="nombreActualizar" name="nombre">
                                             <label for="">APELLIDO</label>
-                                            <input type="text" id="apellidoActualizar">
+                                            <input type="text" id="apellidoActualizar" name="apellido">
                                             <label for="">GENERO</label>
-                                            <input type="text" id="generoActualizar">
+                                            <input type="text" id="generoActualizar" name="genero">
                                             <label for="">PUESTO</label>
-                                            <input type="text" id="puestoActualizar">
+                                            <input type="text" id="puestoActualizar" name="puesto">
                                             <label for="">USUARIO</label>
-                                            <input type="text" id="usuarioActualizar">
-                                            <label for="">CONTRASEÑA</label>
-                                            <input type="text" id="contraseñaActualizar">
+                                            <input type="text" id="usuarioActualizar" name="usuario">
                                             <label for="">DIRECCION</label>
-                                            <input type="text" id="direccionActualizar">
+                                            <input type="text" id="direccionActualizar" name="direccion">
                                             <label for="">TELEFONO</label>
-                                            <input type="text" id="telefonoActualizar">
+                                            <input type="text" id="telefonoActualizar" name="telefono">
                                             <label for="">EMAIL</label>
-                                            <input type="text" id="emailActualizar">
+                                            <input type="text" id="emailActualizar" name="email">
                                             <label for="">SUELDO</label>
-                                            <input type="text" id="sueldoActualizar">
+                                            <input type="text" id="sueldoActualizar" name="sueldo">
                                             <label for="">ROL</label>
-                                            <select name="" id="rolActualizar">
+                                            <select name="rol" id="rolActualizar">
                                                 <option value="">Selecciona un rol</option>
-                                                <option value="gerente">Gerente</option>
-                                                <option value="contador">Contador</option>
-                                                <option value="secretaria">Secretaria</option>
+                                                <option value="1">Administrador</option>
+                                                <option value="2">Vendedor</option>
+                                                <option value="3">Bodequero</option>
             
                                             </select>
                                             <button type="submit " class="btn btn-success">Agregar personal</button>
@@ -290,35 +284,35 @@
                                     <div class=" formulario">
                                         <h2>Agregar personal</h2>
                                             <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreAgregar">
+                                            <input type="text" id="nombreAgregar" name="nombre">
                                             <label for="">APELLIDO</label>
-                                            <input type="text" id="apellidoAgregar">
+                                            <input type="text" id="apellidoAgregar" name="apellido">
                                             <label for="">GENERO</label>
-                                            <select name="" id="generoAgregar">
+                                            <select name="genero" id="generoAgregar">
                                                 <option value="">Seleccione un genero</option>
-                                                <option value="masculino">Masculino</option>
-                                                <option value="femenino">Femenino</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
                                             </select>
                                             <label for="">PUESTO</label>
-                                            <input type="text" id="puestoAgregar">
+                                            <input type="text" id="puestoAgregar" name="puesto">
                                             <label for="">USUARIO</label>
-                                            <input type="text" id="usuarioAgregar">
+                                            <input type="text" id="usuarioAgregar" name="usuario">
                                             <label for="">CONTRASEÑA</label>
-                                            <input type="text" id="contraseñaAgregar">
+                                            <input type="text" id="contraseñaAgregar" name="password">
                                             <label for="">DIRECCION</label>
-                                            <input type="text" id="direccionAgregar">
+                                            <input type="text" id="direccionAgregar" name="direccion">
                                             <label for="">TELEFONO</label>
-                                            <input type="text" id="telefonoAgregar">
+                                            <input type="text" id="telefonoAgregar" name="telefono">
                                             <label for="">EMAIL</label>
-                                            <input type="text" id="emailAgregar">
+                                            <input type="text" id="emailAgregar" name="email">
                                             <label for="">SUELDO</label>
-                                            <input type="text" id="sueldoAgregar">
+                                            <input type="text" id="sueldoAgregar" name="sueldo">
                                             <label for="">ROL</label>
-                                            <select name="" id="rolAgregar">
+                                            <select name="rol" id="rolAgregar">
                                                 <option value="">Seleccione un rol</option>
-                                                <option value="Gerente">Gerente</option>
-                                                <option value="Contador">Contador</option>
-                                                <option value="Secretaria">Secretaria</option>
+                                                <option value="1">Administrador</option>
+                                                <option value="2">Vendedor</option>
+                                                <option value="3">Bodeguero</option>
             
                                             </select>
                                             <button type="submit" class="btn btn-success">Agregar personal</button>
