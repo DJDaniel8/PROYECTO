@@ -246,7 +246,7 @@
                                 <!-- Contenido del Modal -->
                                 <div class="modal-body">
                                     <div class=" formulario">
-                                        <form action="">
+                                        
                                         <h2>Eliminar Personal</h2>
                                             <label for="">ID</label>
                                             <input type="text" readonly>
@@ -254,7 +254,7 @@
                                             <label for="">NOMBRE</label>
                                             <input type="text" id="nombreEliminar">
     
-                                        </form>
+                                        
                                         </div>
                                     
                                 </div>
@@ -334,6 +334,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/personalApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/personalApp.js"></script>
 </body>
 </html>

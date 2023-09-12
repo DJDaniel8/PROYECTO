@@ -217,7 +217,7 @@
                             <!-- Contenido del Modal -->
                             <div class="modal-body">
                                 <div class=" formulario">
-                                    <form action="">
+                                    
                                     <h2>Eliminar Proveedor</h2>
                                         <label for="">ID</label>
                                         <input type="text" readonly>
@@ -225,7 +225,7 @@
                                         <label for="">RAZON SOCIAL</label>
                                         <input type="text" id="razonEliminar">
 
-                                    </form>
+                                    
                                     </div>
                                 
                             </div>
@@ -253,18 +253,18 @@
                         <!-- Contenido del Modal -->
                         <div class="modal-body">
                             <div class=" formulario">
-                                <form action="">
+                                
                                 <h2>Agregar Proveedor</h2>
                                     <label for="">RAZON SOCIAL</label>
-                                    <input type="text" id="razonAgregar">
+                                    <input type="text" id="razonAgregar" name="razonSocial">
                                     <label for="">DIRECCION</label>
-                                    <input type="text" id="direccionAgregar">
+                                    <input type="text" id="direccionAgregar" name="direccion">
                                     <label for="">TELEFONO</label>
-                                    <input type="text" id="telefonoAgregar">
+                                    <input type="text" id="telefonoAgregar" name="telefono">
                                    
                 
                                     <button type="button " class="btn btn-success">Agregar Proveedor</button>
-                                </form>
+                                
                                 </div>
                             
                         </div>
@@ -283,6 +283,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/proveedoresApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/proveedoresApp.js"></script>
 </body>
 </html>
