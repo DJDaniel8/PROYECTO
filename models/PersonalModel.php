@@ -42,8 +42,8 @@ class PersonalModel extends ModelBase {
 
     public function read(){
         $personalArray = array();
-        $query = "SELECT * FROM Trabajadores
-                    INNER JOIN Roles as r ON Trabajadores.rol = r.id";
+        $query = "SELECT [dbo].[Trabajadores].*, Id, r.nombre as nombrerol FROM Trabajadores
+        INNER JOIN Roles as r ON Trabajadores.rol = r.id";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
 
@@ -65,7 +65,7 @@ class PersonalModel extends ModelBase {
             $personal->sueldo = $row['sueldo'];
             $rol = new Rol();
             $rol->id = $row['Id'];
-            $rol->nombre = $row['nombre'];
+            $rol->nombre = $row['nombrerol'];
             $personal->rol = $rol;
             array_push($personalArray, $personal);
         }

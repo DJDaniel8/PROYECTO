@@ -176,7 +176,6 @@
                                 '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol->nombre."')".'">Actualizar</button>';
                             echo "</td>";
                             echo "</tr>";
-                            var_dump($row);
                         }
                     } else {
                         var_dump($this->model);
