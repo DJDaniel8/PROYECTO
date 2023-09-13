@@ -138,42 +138,52 @@
         <div class="container">
             <h2>Lista de personal</h2>
             <table class="table table-hover table-bordered">
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
-                <th>GENERO</th>
-                <th>PUESTO</th>
-                <th>USUARIO</th>
-                <th>DIRECCION</th>
-                <th>TELEFONO</th>
-                <th>EMAIL</th>
-                <th>SUELDO</th>
-                <th>ROL</th>
-                <th>OPCIONES</th>
-        
+                <tbody id="CuerpoTabla">
                 <tr>
-                <td>Daniel</td>
-                <td>Fuentes</td>
-                <td>Masculino</td>
-                <td>Gerente</td>
-                <td>DanielFue</td>
-                <td>San marcos</td>
-                <td>5487-0220</td>
-                <td>fuentes@gmail.com</td>
-                <td>Q 25,000.00</td>
-                <td>Gerente</td>
-               
-                <td>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-            Eliminar
-        </button>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-            Actualizar
-        </button>
-                        
-                    </td>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>GENERO</th>
+                    <th>PUESTO</th>
+                    <th>USUARIO</th>
+                    <th>DIRECCION</th>
+                    <th>TELEFONO</th>
+                    <th>EMAIL</th>
+                    <th>SUELDO</th>
+                    <th>ROL</th>
+                    <th>OPCIONES</th>   
                 </tr>
+
+                <?php   
+                    if (!empty($this->model)) {
+                        foreach ($this->model as $row) {
+                            echo '<tr model-target="'.$row->id.'">';
+                            echo "<td>{$row->nombre}</td>";
+                            echo "<td>{$row->apellido}</td>";
+                            echo "<td>{$row->genero}</td>";
+                            echo "<td>{$row->puesto}</td>";
+                            echo "<td>{$row->usuario}</td>";
+                            echo "<td>{$row->direccion}</td>";
+                            echo "<td>{$row->telefono}</td>";
+                            echo "<td>{$row->email}</td>";
+                            echo "<td>{$row->sueldo}</td>";
+                            echo "<td>{$row->rol}</td>";
+                            echo "<td>"; 
+                            echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
+                                    Eliminar
+                                    </button>';
+                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
+                                '.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->genero."','".$row->puesto."','".$row->usuario."',
+                                '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol."')".'">Actualizar</button>';
+                            echo "</td>";
+                            echo "</tr>";
+                            var_dump($row);
+                        }
+                    } else {
+                        var_dump($this->model);
+                    }
+
+                ?>
+                <tbody>
             </table>
         </div>
         <!--ACTUALIZAR PRODUCTO-->
@@ -282,6 +292,7 @@
                                 <!-- Contenido del Modal -->
                                 <div class="modal-body">
                                     <div class=" formulario">
+                                        
                                         <h2>Agregar personal</h2>
                                             <label for="">NOMBRE</label>
                                             <input type="text" id="nombreAgregar" name="nombre">
