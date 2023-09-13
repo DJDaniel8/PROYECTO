@@ -9,6 +9,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/azure-storage/2.10.4/azure-storage.blob.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/estilosGenerales.css">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/background.css">
@@ -181,16 +182,12 @@
                                     <div class=" formulario">
                                         <form action="">
                                         <h2>Actualizar Producto</h2>
-                                            <label for="">ID</label>
-                                            <input type="text" readonly >
                                             <label for="">CODIGO</label>
-                                            <input type="text" id="codigoActualizar">
+                                            <input type="text" id="codigoActualizar" name="codigo">
                                             <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreActualizar">
+                                            <input type="text" id="nombreActualizar" name="nombre">
                                             <label for="">DESCRIPCION</label>
-                                            <input type="text" id="descripcionActualizar">
-                                            <label for="">IMAGEN</label>
-                                            <input type="file" id="imagenActualizar">
+                                            <input type="text" id="descripcionActualizar" name="descripcion">
                                             <button type="button " class="btn btn-success">Actualizar producto</button>
                                         </form>
                                         </div>
@@ -223,7 +220,7 @@
                                         <form action="">
                                         <h2>Eliminar Producto</h2>
                                             <label for="">ID</label>
-                                            <input type="text" readonly id="idProductoEliminar">
+                                            <input type="text" readonly id="idProductoEliminar" name="id">
                                     
                                             <label for="">NOMBRE</label>
                                             <input type="text" id="nombreEliminar" id="nombreEliminar">
@@ -244,7 +241,7 @@
                 </form>
         <!--AGREGAR-->
                 <!-- Modal -->
-                <form method="post" id="crearProducto" action="<?php echo constant('URL').'Productos/Crear'?>" enctype="multipart/form-data">
+                <form method="post" id="crearProducto" >
                     <div class="modal" id="miModal">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -263,8 +260,6 @@
                                             <input type="text" id="nombreCrear" name="nombre">
                                             <label for="">Descripcion</label>
                                             <input type="text" id="descripcionCrear" name="descripcion">
-                                            <label for="">Imagen</label>
-                                            <input type="file" id="imagenCrear" name="imagen">
                                             <button type="submit" class="btn btn-success" >Agregar producto</button>
                                         </div>
                                     
@@ -285,6 +280,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/productoApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/productoApp.js"></script>
 </body>
 </html>

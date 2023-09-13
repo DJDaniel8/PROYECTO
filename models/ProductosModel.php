@@ -30,8 +30,8 @@ class ProductosModel extends ModelBase {
     }
 
     public function read(){
-        $clientes = array();
-        $query = "SELECT * FROM Clientes";
+        $productos = array();
+        $query = "SELECT * FROM Productos";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
 
@@ -39,35 +39,28 @@ class ProductosModel extends ModelBase {
         $resultadoQuery->execute();
         
         while ($row = $resultadoQuery->fetch()) {
-            $cliente = new Cliente();
+            $producto = new Producto();
 
-            $cliente->id=$row['clienteId'];
-            $cliente->nombre=$row['nombre'];
-            $cliente->apellido=$row['apellido'];
-            $cliente->sexo=$row['sexo'];
-            $cliente->nit=$row['nit'];
-            $cliente->direccion=$row['direccion'];
-            $cliente->telefono=$row['telefono'];
-            $cliente->email=$row['email'];
-            array_push($clientes, $cliente);
+            $producto->id=$row['productoId'];
+            $producto->codigo=$row['codigo'];
+            $producto->nombre=$row['nombre'];
+            $producto->descripcion=$row['descripcion'];
+            
+            array_push($productos, $producto);
         }
 
-        return $clientes;
+        return $productos;
     }
 
-    public function update($Cliente){
-        $query = "UPDATE Clientes SET nombre = :nombre, apellido = :apellido, sexo = :sexo, nit = :nit, direccion = :direccion, telefono = :telefono, email = :email
-        WHERE clienteId = :id";
+    public function update(Producto $producto){
+        $query = "UPDATE Productos SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion
+        WHERE productoId = :id";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
-        $resultadoQuery->bindParam(':id', $Cliente->id, PDO::PARAM_INT);
-        $resultadoQuery->bindParam(':nombre', $Cliente->nombre, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':apellido', $Cliente->apellido, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':sexo', $Cliente->sexo, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':nit', $Cliente->nit, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':direccion', $Cliente->direccion, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':telefono', $Cliente->telefono, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':email', $Cliente->email, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':id', $producto->id, PDO::PARAM_INT);
+        $resultadoQuery->bindParam(':codigo', $producto->codigo, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':nombre', $producto->nombre, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':descripcion', $producto->descripcion, PDO::PARAM_STR);
 
         $resultadoQuery->execute();
         
@@ -81,7 +74,7 @@ class ProductosModel extends ModelBase {
     }
 
     public function delete($id){
-        $query = "DELETE FROM Clientes WHERE clienteId = :id";
+        $query = "DELETE FROM Productos WHERE productoId = :id";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
         $resultadoQuery->bindParam(':id', $id, PDO::PARAM_INT);
