@@ -244,7 +244,7 @@
                 </form>
         <!--AGREGAR-->
                 <!-- Modal -->
-                <form method="post" id="crearProducto">
+                <form method="post" id="crearProducto" action="<?php echo constant('URL').'Productos/Crear'?>">
                     <div class="modal" id="miModal">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -256,18 +256,16 @@
                                 <!-- Contenido del Modal -->
                                 <div class="modal-body">
                                     <div class=" formulario">
-                                        <form action="">
                                         <h2>Agregar producto</h2>
                                             <label for="">Codigo</label>
-                                            <input type="text" id="codigoCrear">
+                                            <input type="text" id="codigoCrear" name="codigo">
                                             <label for="">Nombre</label>
-                                            <input type="text" id="nombreCrear">
+                                            <input type="text" id="nombreCrear" name="nombre">
                                             <label for="">Descripcion</label>
-                                            <input type="text" id="descripcionCrear">
+                                            <input type="text" id="descripcionCrear" name="descripcion">
                                             <label for="">Imagen</label>
-                                            <input type="file" id="imagenCrear">
+                                            <input type="file" id="imagenCrear" name="imagen">
                                             <button type="submit" class="btn btn-success" >Agregar producto</button>
-                                        </form>
                                         </div>
                                     
                                 </div>
