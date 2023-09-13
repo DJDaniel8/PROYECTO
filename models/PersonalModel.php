@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/Personal.php';
+require_once 'models/Rol.php';
 
 class PersonalModel extends ModelBase {
 
@@ -59,8 +60,10 @@ class PersonalModel extends ModelBase {
             $personal->telefono = $row['telefono'];
             $personal->email = $row['email'];
             $personal->sueldo = $row['sueldo'];
-            $personal->rol->id = $row['r.id'];
-            $personal->rol->nombre = $row['r.nombre'];
+            $rol = new Rol();
+            $rol->id = $row['r.id'];
+            $rol->nombre = $row['r.nombre'];
+            $personal->rol = $rol;
             array_push($personalArray, $personal);
         }
 
