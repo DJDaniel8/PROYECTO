@@ -66,7 +66,7 @@ class ProductosController extends ControllerBase{
                 $nombreTemporal = $_FILES["imagen"]["tmp_name"];
                 $nombreArchivo = $_FILES["imagen"]["name"];
 
-                $directorioDestino = constant('URL').'resources/imagenes/'. $nombreArchivo;
+                $directorioDestino = 'resources/imagenes/'. $nombreArchivo;
 
                 if (move_uploaded_file($nombreTemporal, $directorioDestino)) {
                     echo "La imagen se ha cargado correctamente.";
@@ -76,8 +76,8 @@ class ProductosController extends ControllerBase{
 
                 $accountKey = 'tu_clave_de_acceso';
                 $blobName = $nombreArchivo;
-                $localFilePath = constant('URL').'resources/imagenes/'. $nombreArchivo;
-                $blobUrl = constant('blobServiceUrl').'/'.$blobName;
+                $localFilePath = 'resources/imagenes/'. $nombreArchivo;
+                $blobUrl = constant('blobServiceUrl');
                 $accountName = constant('accountName');
                 $accountKey = constant('accountKey');
 

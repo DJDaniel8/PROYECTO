@@ -89,7 +89,7 @@ class PersonalController extends ControllerBase{
         $respuesta = array(
             'Respuesta' => $res,
             'Mensaje' => $mensaje,
-            'Valor' => $personal
+            'Valor' => $id
         );
 
         header('Content-Type: application/json');

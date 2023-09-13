@@ -244,7 +244,7 @@
                 </form>
         <!--AGREGAR-->
                 <!-- Modal -->
-                <form method="post" id="crearProducto" action="<?php echo constant('URL').'Productos/Crear'?>">
+                <form method="post" id="crearProducto" action="<?php echo constant('URL').'Productos/Crear'?>" enctype="multipart/form-data">
                     <div class="modal" id="miModal">
                         <div class="modal-dialog">
                             <div class="modal-content">
