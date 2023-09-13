@@ -1,5 +1,7 @@
 <?php
 
+require_once 'models/Personal.php';
+
 class PersonalController extends ControllerBase{
 
 
