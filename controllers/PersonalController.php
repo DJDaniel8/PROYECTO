@@ -23,6 +23,11 @@ class PersonalController extends ControllerBase{
         }
     }
 
+    function loadModel($model){
+        parent::loadModel($model);
+        $this->Listar();
+    }
+
     function validarAcceso(){
         session_name("LOGIN");
         session_start();
