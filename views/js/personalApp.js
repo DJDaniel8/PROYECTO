@@ -275,7 +275,8 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
 function enviarFormulario() {
     const formulario = document.getElementById("crearPersonal");
     const formData = new FormData(formulario);
-    console.log(formData);
+    
+    console.log(formData.get("rol"));
     fetch(url+"Personal/Crear", {
       method: "POST",
       body: formData,
@@ -290,14 +291,14 @@ function enviarFormulario() {
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-      if(data.Respuesta) AgregarFila(data.valor.id,data.valor.nombre, data.valor.apellido,data.valor.genero,
-        data.valor.puesto, data.valor.usuario, data.valor.direccion, data.valor.telefono, 
-        data.valor.email, data.valor.sueldo, data.valor.rol
+      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.nombre, data.Valor.apellido,data.Valor.genero,
+        data.Valor.puesto, data.Valor.usuario, data.Valor.direccion, data.Valor.telefono, 
+        data.Valor.email, data.Valor.sueldo, data.Valor.rol
         );
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
-      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.");
+      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde." + error);
     });
 }
 

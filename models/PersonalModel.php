@@ -11,25 +11,22 @@ class PersonalModel extends ModelBase {
     }
 
     public function insert(Personal $personal, $contrasena){
-        $query = "INSERT into Trabajadores (nombre, apellido, sexo, puesto, usuario, contrasena, direccion, telefono, email, sueldo, rol) 
-                                VALUES (:nombre, :apellido, :sexo, :puesto, :usuario, :contrasena, :direccion, :telefono, :email, :sueldo, :rol)";
+        $query = "EXEC insertarProducto @nombre = :nombre, @apellido = :apellido, @sexo = :sexo, @puesto = :puesto, @usuario = :usuario ,@contrasena = {$contrasena}, @direccion = :direccion, @telefono= :telefono, @email = :email, @sueldo = {$personal->sueldo}, @rol = {$personal->rol->id} ";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
         $resultadoQuery->bindParam(':nombre', $personal->nombre, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':apellido', $personal->apellido, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sexo', $personal->sexo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':puesto', $personal->puesto, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':usuario', $personal->usuario, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':sueldo', $personal->sueldo, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':rol', $personal->rol->id, PDO::PARAM_INT);
-
-        try {
-            $resultadoQuery->execute();
         
-            if($resultadoQuery->rowCount() == 1)
+        
+        $resultadoQuery->execute();
+        
+        if($resultadoQuery->rowCount() == 1)
         {
             return true;
         }
@@ -37,10 +34,7 @@ class PersonalModel extends ModelBase {
             return false;
         }
         
-        } catch (PDOException $e) {
         
-            echo "Error en la consulta: " . $e->getMessage();
-        }
 
         
         
