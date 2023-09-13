@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/Personal.php';
+require_once 'models/Rol.php';
 
 class PersonalController extends ControllerBase{
 
@@ -67,9 +68,11 @@ class PersonalController extends ControllerBase{
             $personal->telefono = $_POST['telefono'];
             $personal->email = $_POST['email'];
             $personal->sueldo = $_POST['sueldo'];
-            $personal->rol->id = $_POST['rol'];
-
-            $res = $this->model->insert($personal);
+            $contrasena=$_POST['password'];
+            $rol= new Rol();
+            $rol->id=$_POST['rol'];
+            $personal->rol=$rol;
+            $res = $this->model->insert($personal,$contrasena);
             $id = $this->model->getLastId();
             
             if($res){

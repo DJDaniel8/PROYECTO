@@ -10,32 +10,39 @@ class PersonalModel extends ModelBase {
         parent::__construct();
     }
 
-    public function insert(Personal $personal, $contraseña){
-        $query = "INSERT into trabajadores (nombre, apellido, sexo, puesto, usuario, contraseña, direccion, telefono, email, sueldo, rol) 
-                                VALUES (:nombre, :apellido, :sexo, :puesto, :usuario, :contraseña, :direccion, :telefono, :email, :sueldo, :rol)";
+    public function insert(Personal $personal, $contrasena){
+        $query = "INSERT into Trabajadores (nombre, apellido, sexo, puesto, usuario, contrasena, direccion, telefono, email, sueldo, rol) 
+                                VALUES (:nombre, :apellido, :sexo, :puesto, :usuario, :contrasena, :direccion, :telefono, :email, :sueldo, :rol)";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
         $resultadoQuery->bindParam(':nombre', $personal->nombre, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':apellido', $personal->apellido, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sexo', $personal->sexo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':puesto', $personal->puesto, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':contraseña', $contraseña, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sueldo', $personal->sueldo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':rol', $personal->rol->id, PDO::PARAM_INT);
 
+        try {
+            $resultadoQuery->execute();
         
-        $resultadoQuery->execute();
-        
-        if($resultadoQuery->rowCount() == 1)
+            if($resultadoQuery->rowCount() == 1)
         {
             return true;
         }
         else{
             return false;
         }
+        
+        } catch (PDOException $e) {
+        
+            echo "Error en la consulta: " . $e->getMessage();
+        }
+
+        
         
     }
 
@@ -83,7 +90,7 @@ class PersonalModel extends ModelBase {
         $resultadoQuery->bindParam(':apellido', $personal->apellido, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sexo', $personal->sexo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':puesto', $personal->puesto, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':contraseña', $contraseña, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
