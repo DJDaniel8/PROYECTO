@@ -166,14 +166,14 @@
                             echo "<td>{$row->telefono}</td>";
                             echo "<td>{$row->email}</td>";
                             echo "<td>{$row->sueldo}</td>";
-                            echo "<td>{$row->rol}</td>";
+                            echo "<td>{$row->rol->nombre}</td>";
                             echo "<td>"; 
                             echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
                                     Eliminar
                                     </button>';
                             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
-                                '.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->genero."','".$row->puesto."','".$row->usuario."',
-                                '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol."')".'">Actualizar</button>';
+                                '.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->puesto."','".$row->usuario."',
+                                '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol->nombre."')".'">Actualizar</button>';
                             echo "</td>";
                             echo "</tr>";
                             var_dump($row);

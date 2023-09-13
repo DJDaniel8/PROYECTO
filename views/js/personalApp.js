@@ -23,6 +23,8 @@ document.getElementById("crearPersonal").addEventListener("submit", function(eve
     var telefono = document.getElementById("telefonoAgregar");
     var email = document.getElementById("emailAgregar");
     var sueldo = document.getElementById("sueldoAgregar");
+    var contraseña = document.getElementById("contraseñaAgregar");
+    
     var rol = document.getElementById("rolAgregar");
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
@@ -273,7 +275,7 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
 function enviarFormulario() {
     const formulario = document.getElementById("crearPersonal");
     const formData = new FormData(formulario);
-  
+    console.log(formData);
     fetch(url+"Personal/Crear", {
       method: "POST",
       body: formData,
