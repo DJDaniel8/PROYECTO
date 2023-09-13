@@ -159,7 +159,7 @@
                             echo '<tr model-target="'.$row->id.'">';
                             echo "<td>{$row->nombre}</td>";
                             echo "<td>{$row->apellido}</td>";
-                            echo "<td>{$row->genero}</td>";
+                            echo "<td>{$row->sexo}</td>";
                             echo "<td>{$row->puesto}</td>";
                             echo "<td>{$row->usuario}</td>";
                             echo "<td>{$row->direccion}</td>";
