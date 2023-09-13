@@ -291,7 +291,7 @@ function enviarFormulario() {
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.nombre, data.Valor.apellido,data.Valor.genero,
+      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.nombre, data.Valor.apellido,data.Valor.sexo,
         data.Valor.puesto, data.Valor.usuario, data.Valor.direccion, data.Valor.telefono, 
         data.Valor.email, data.Valor.sueldo, data.Valor.rol
         );
