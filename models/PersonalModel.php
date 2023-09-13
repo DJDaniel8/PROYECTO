@@ -50,6 +50,8 @@ class PersonalModel extends ModelBase {
         $resultadoQuery->execute();
         
         while ($row = $resultadoQuery->fetch()) {
+
+            
             $personal = new Personal();
             $personal->nombre = $row['nombre'];
             $personal->apellido = $row['apellido'];
@@ -61,8 +63,8 @@ class PersonalModel extends ModelBase {
             $personal->email = $row['email'];
             $personal->sueldo = $row['sueldo'];
             $rol = new Rol();
-            $rol->id = $row['r.id'];
-            $rol->nombre = $row['r.nombre'];
+            $rol->id = $row['Id'];
+            $rol->nombre = $row['nombre'];
             $personal->rol = $rol;
             array_push($personalArray, $personal);
         }
