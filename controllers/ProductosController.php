@@ -63,7 +63,7 @@ class ProductosController extends ControllerBase{
             $producto->descripcion = $_POST['descripcion'];
 
             $res = $this->model->insert($producto);
-            $id = $this->model->getLastId();
+            $producto->id = $this->model->getLastId();
             
             if($res){
                 $mensaje = "Producto Insertado con Exito";
