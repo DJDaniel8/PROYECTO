@@ -81,7 +81,7 @@ class ClientesController extends ControllerBase{
         $respuesta = array(
             'Respuesta' => $res,
             'Mensaje' => $mensaje,
-            'Valor' => $id
+            'Valor' => $cliente
         );
 
         header('Content-Type: application/json');
