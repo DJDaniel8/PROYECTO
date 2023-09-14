@@ -24,7 +24,9 @@ class PersonalModel extends ModelBase {
         $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
         
         
-            if($resultadoQuery->rowCount() == 1)
+        $resultadoQuery->execute();
+        
+        if($resultadoQuery->rowCount() == 1)
         {
             return true;
         }
