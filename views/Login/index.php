@@ -21,7 +21,6 @@
             <div class="top-header">
                 <header>Inicio de sesión</header>
             </div>
-
             <div class="input-field">
                 <input type="text" class="input" placeholder="Nombre de usuario" required id="usuario"
                 name="usuario" autocomplete="off"> 

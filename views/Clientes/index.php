@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,10 +122,11 @@
         <div class="container sticky-section">
             <h1>Clientes</h1>
             <div class="container">
-                <div class="input-group mb-3">
+                <!--<div class="input-group mb-3">
                     <h2>Buscar:</h2>
                     <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
+                </div>-->
+                
             </div>
             <div class="container">
             <!-- Botón para abrir el modal -->
@@ -211,7 +212,7 @@
                                         <label for="">EMAIL</label>
                                         <input type="text" id="emailActualizar" name="email" autocomplete="off">
                                         <!--Pie de modal-->
-                                        <button type="submit" class="btn btn-success">Agregar personal</button>
+                                        <button type="submit" class="btn btn-success">Actualizar cliente</button>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarActualizar()">Cerrar</button>
                                         </div>

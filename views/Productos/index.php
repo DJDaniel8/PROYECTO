@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,10 +122,10 @@
         <div class="container sticky-section">
             <h1>Productos</h1>
             <div class="container">
-                <div class="input-group mb-3">
+                <!--<div class="input-group mb-3">
                     <h2>Buscar:</h2>
                     <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
+                </div>-->
             </div>
             <div class="container">
             <!-- Botón para abrir el modal -->

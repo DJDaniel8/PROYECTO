@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -118,75 +118,81 @@
         </nav>
         <!--FIN DE NAVBAR-->
 
-<div class="container">
+        
+        <div class="container">
     <div class="container sticky-section">
     <h1>Ingresos</h1>
     <div class="container">
-        <div class="input-group mb-3">
+        <!--<div class="input-group mb-3">
             <h2>Buscar:</h2>
             <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+        </div>-->
     </div>
     <div class="container">
         <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
-            Nuevo ingreso
+        <button type="button" class="btn btn-success botonModal">
+            <a href="<?php echo constant('URL') ?>views/Ingresos/nuevoIngreso.php" style="color:aliceblue">Ingreso</a>
         </button>
         </div>
-</div>
+
+    </div>
     <div class="row">
         <div class="col-md-6">
+            
             <h2>Historial de ventas</h2>
             <div class="table-container">
                 <!-- Contenido de la primera tabla -->
                 <table class="table table-hover table-bordered">
+                    
                     <th>FECHA</th>
-                    <th>PROVEEDOR</th>
-                    <th>TOTAL</th>
+                    <th>TRABAJADOR ID</th>
+                    <th>PROVEEDOR ID</th>
 
         
                     <tr>
-                        <td>21/8/2023</td>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                 
+                    </tr>
+                    <tr>
+                       
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                       
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                       
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
@@ -197,91 +203,95 @@
             <h2>Detalles ventas</h2>
             <div class="table-container">
                 <table class="table table-hover table-bordered">
-                    <th>CODIGO</th>
-                    <th>NOMBRE</th>
+                   
+                    <th>INGRESO ID</th>
+                    <th>PRODUCTO ID</th>
                     <th>CANTIDAD</th>
                     <th>PRECIO COMPRA</th>
+                    <th>STOCK ID</th>
 
         
                     <tr>
-                        <td>123</td>
+                        
+                        <td>50</td>
+                        <td>415</td>
+                        <td>10</td>
+                        <td>4545</td>
+                        <td>01</td>
+             
+                    </tr>
+                    <tr>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                       
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
@@ -294,50 +304,6 @@
     </div>
 </div>
 
-<form method="post" id="ingresos">
-      <!-- Modal -->
-      <div class="modal" id="miModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Encabezado del Modal -->
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" onclick="Limpiar()">&times;</button>
-                </div>
-
-                <!-- Contenido del Modal -->
-                <div class="modal-body">
-                    <div class=" formulario">
-                        <form action="">
-                        <h2>Agregar producto</h2>
-                           <label for="">PROVEEDOR</label>
-                            <select name="" id="proveedor">
-                                <option value="">Seleccionar proveedor</option>
-                                <option value="Luis">Luis</option>
-                                <option value="Daniel">Daniel</option>
-                                <option value="Mynor">Mynor</option>
-
-                            </select>
-                            <label for="">PRODUCTO</label>
-                            <select name="" id="producto">
-                                <option value="">Seleccionar producto</option>
-                                <option value="Piti">Piti tanga</option>
-                                <option value="Calzon">Calzon</option>
-                                <option value="Nya">Nya</option>
-
-                            </select>
-                            <button type="submit" class="btn btn-success" >Agregar ingreso</button>
-                        </form>
-                        </div>
-                    
-                </div>
-                <!-- Pie del Modal -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Limpiar()">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
 <!-- Agrega los scripts de Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Electronica</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/estilosGenerales.css">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/background.css">
@@ -102,7 +107,7 @@
     
             <ul class="logout">
                 <li>
-                   <a href="#">
+                   <a href="<?php echo constant('URL')?>Ingresos/LogOut">
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                             Logout
@@ -112,86 +117,102 @@
             </ul>
         </nav>
         <!--FIN DE NAVBAR-->
-        <div class="content-container">
-<div class="container">
 
-    <div class="container sticky-section">
-    <h1>Ventas</h1>
+        <div class="container">
+    <div class="container sticky-section cem">
+    <h1>Nuevo</h1>
+
+    <div class="d-flex flex-row align-items-center ">
+        <div class="form-group mr-2">
+            <label for="proveedoresSelect">Proveedor</label>
+            <select id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+            Agregar producto
+        </button>
+    </div>
+
+</div>
+<br>
+    </div>
     <div class="container">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Busca aqui" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary " type="button" style="height: 45px;"><img src="<?php echo constant('URL') ?>views/img/icons8-búsqueda.gif" style="height: 20px;" alt=""></button>
-            </div>
-          </div>
-    </div>
-    </div>
-    <div class="table-container">
-    <table class="table table-hover table-bordered">
-            
+        <!--AQUI AGREGUE EL DIV PARA EL CONTENIDO DE LA TABLA-->
+        <div class="table-container">
+        <table class="table table-hover table-bordered">
+            <th>CODIGO</th>
             <th>NOMBRE</th>
+            <th>CANTIDAD</th>
+            <th>PRECIO COMPRA</th>
+            <th>PRECIO MINIMO VENTA</th>
             <th>PRECIO VENTA</th>
-            <th>CATEGORIA</th>
-            <th>UNIDADES</th>
-            <th>Opcion</th>
-
+            <th>    <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                    Finalizar
+                </button></th>
             <tr>
-
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td><input type="number" min="1" pattern="^[0-9]+"></td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
+            <td>1</td>
+            <td>Daniel</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+           
+           
             </tr>
-
-      </table>
-      </div>
-      <div class="container centrar">
-        <div class="container sticky-section">
-        <h2>Productos Añadidos</h2>
-        <button type="button" class="btn btn-success">Finalizar</button>
+        </table>
+        </div>
     </div>
-    </div>
- 
+</div>
 
-    <div class="table-container">   
-    <table class="table table-hover table-bordered">
-        
-        <th>NOMBRE</th>
-        <th>PRECIO VENTA</th>
-        <th>CATEGORIA</th>
-        <th>UNIDADES</th>
-        <th>Opcion</th>
+<form method="post" id="ingresos">
+      <!-- Modal -->
+      <div class="modal" id="miModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="Limpiar()">&times;</button>
+                </div>
 
-        <tr>
+                <!-- Contenido del Modal -->
+                <div class="modal-body">
+                    <div class=" formulario">
+                        <form action="">
+                            <label for="">PRODUCTO</label>
+                            <select name="" id="producto">
+                                <option value="">Seleccionar producto</option>
+                                <option value="Piti">Piti tanga</option>
+                                <option value="Calzon">Calzon</option>
+                                <option value="Nya">Nya</option>
 
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>545</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-
-    </table>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row justify-content-end">
-            <div class="col-2">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Q</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-text">.00</span>
+                            </select>
+                            <button type="submit" class="btn btn-success" >Enviar</button>
+                        </form>
+                        </div>
+                    
+                </div>
+                <!-- Pie del Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Limpiar()">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="<?php echo constant('URL') ?>views/js/table.js"></script> 
+</form>
+
+<!-- Agrega los scripts de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../js/ingresosApp.js"></script>
 </body>
 </html>
