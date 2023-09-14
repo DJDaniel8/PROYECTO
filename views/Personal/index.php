@@ -168,7 +168,7 @@
                             echo "<td>{$row->sueldo}</td>";
                             echo "<td>{$row->rol->nombre}</td>";
                             echo "<td>"; 
-                            echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
+                            echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
                                     Eliminar
                                     </button>';
                             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
@@ -176,8 +176,7 @@
                                 '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol->nombre."')".'">Actualizar</button>';
                             echo "</td>";
                             echo "</tr>";
-
-                            
+                            var_dump($row);
                         }
                     } else {
                         var_dump($this->model);
