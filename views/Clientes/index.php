@@ -163,7 +163,7 @@
                             echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
                                  Eliminar
                                  </button>';
-                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick=Actualizar('.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->nit."','".$row->direccion."','".$row->telefono."','".$row->email."')".'">
+                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->nit."','".$row->direccion."','".$row->telefono."','".$row->email."')".'">
                                 Actualizar
                                 </button> ';
                             echo "</td>";

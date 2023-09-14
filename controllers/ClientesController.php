@@ -67,7 +67,7 @@ class ClientesController extends ControllerBase{
             $cliente->email = $_POST['email'];
 
             $res = $this->model->insert($cliente);
-            $id = $this->model->getLastId();
+            $cliente->id = $this->model->getLastId();
             
             if($res){
                 $mensaje = "Cliente Insertado con Exito";

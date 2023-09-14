@@ -61,7 +61,6 @@ class ProductosController extends ControllerBase{
             $producto->codigo = $_POST['codigo'];
             $producto->nombre = $_POST['nombre'];
             $producto->descripcion = $_POST['descripcion'];
-            $producto->imagen = $_POST['imagenUrl'];
 
             $res = $this->model->insert($producto);
             $id = $this->model->getLastId();
@@ -78,7 +77,7 @@ class ProductosController extends ControllerBase{
         $respuesta = array(
             'Respuesta' => $res,
             'Mensaje' => $mensaje,
-            'Valor' => $id
+            'Valor' => $producto
         );
 
         header('Content-Type: application/json');

@@ -114,6 +114,11 @@ function enviarFormulario() {
 }
 
 function AgregarFila(id,nombre,apellido,sexo,nit,direccion,telefono,email){
+    console.log(id);
+    console.log(nombre);
+    console.log(apellido);
+    console.log(sexo);
+    console.log(nit);
     var nuevoTr = document.createElement('tr');
     nuevoTr.setAttribute('model-target', id);
     var nuevaCeldaNombre = document.createElement('td');
@@ -270,6 +275,7 @@ function LimpiarEliminar()
 }
 
 function Actualizar(id,nombre,apellido,sexo,nit,direccion,telefono,email){
+    console.log(id);
     idActualizar1=id;
     nombreActualizar1=nombre;
     apellidoActualizar1=apellido;
@@ -364,7 +370,7 @@ document.getElementById("actualizarCliente").addEventListener("submit", function
 });
 
 function actualizarCliente(id,nombre,apellido,sexo,nit,direccion,telefono,email){
-    console.log(sexo);
+
     Swal.fire({
         title: '¿Estás seguro?',
         text: '¿Deseas Actualizar esta categoría?',
