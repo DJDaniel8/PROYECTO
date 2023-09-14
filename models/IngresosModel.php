@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/Ingreso.php';
+require_once 'models/Proveedor.php';
 
 class IngresosModel extends ModelBase {
 
@@ -93,6 +94,28 @@ class IngresosModel extends ModelBase {
         }
         
     }
+
+    public function getProvedores(){
+        $proveedores = array();
+        $query = "SELECT * FROM Proveedores";
+        $conexion = $this->db->connect();
+        $resultadoQuery = $conexion->prepare($query);
+
+        
+        $resultadoQuery->execute();
+        
+        while ($row = $resultadoQuery->fetch()) {
+            $proveedor = new Proveedor();
+
+            $proveedor->id=$row['proveedorId'];
+            $proveedor->razonSocial=$row['razonSocial'];
+            
+            array_push($proveedores, $proveedor);
+        }
+
+        return $proveedores;
+    }
+    
 
 }
 

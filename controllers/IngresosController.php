@@ -1,19 +1,21 @@
 <?php
 
-require 'models/Ingreso.php';
+require_once 'models/Ingreso.php';
+require_once 'views/Ingresos/IngresosView.php';
 
 class IngresosController extends ControllerBase{
 
 
     function __construct()
     {
-        parent::__construct();
+        $this->view = new IngresosView();
         $this->isPublic = false;
     }
 
     function loadModel($model){
         parent::loadModel($model);
-        //$this->Listar();
+        $this->view->proveedores = $this->cargarProveedores();
+        $this->Listar();
     }
 
     function render()
@@ -116,6 +118,16 @@ class IngresosController extends ControllerBase{
         header('Content-Type: application/json');
         echo json_encode($respuesta);
     
+    }
+
+    function cargarProveedores(){
+        $res = $this->model->getProvedores();
+        if(isset($res)){
+            return $res;
+        }
+        else{
+            return array('No definido');
+        }
     }
 }
 
