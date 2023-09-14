@@ -123,10 +123,7 @@
         <h1>Stock</h1>
 
         <div class="container">
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
+           
         </div>
         <div class="table-container">
             <table class="table table-hover table-bordered">

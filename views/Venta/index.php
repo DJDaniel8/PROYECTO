@@ -112,21 +112,22 @@
             </ul>
         </nav>
         <!--FIN DE NAVBAR-->
-<div class="content-container">
+        <div class="content-container">
 <div class="container">
-<div class="container sticky-section">
+
+    <div class="container sticky-section">
     <h1>Ventas</h1>
     <div class="container">
         <div class="input-group mb-3">
-            <h2>Buscar:</h2>
-            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+            <input type="text" class="form-control" placeholder="Busca aqui" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary " type="button" style="height: 45px;"><img src="<?php echo constant('URL') ?>views/img/icons8-búsqueda.gif" style="height: 20px;" alt=""></button>
+            </div>
+          </div>
     </div>
-    
-</div>
+    </div>
     <div class="table-container">
     <table class="table table-hover table-bordered">
-
             
             <th>NOMBRE</th>
             <th>PRECIO VENTA</th>
@@ -135,103 +136,29 @@
             <th>Opcion</th>
 
             <tr>
-              
+
                 <td>Papel</td>
                 <td>Q 5.00</td>
                 <td>Limpieza</td>
-                <td>54</td>
+                <td><input type="number" min="1" pattern="^[0-9]+"></td>
                 <td>
                     <button type="button" class="btn btn-primary">Agregar</button>
                 </td>
             </tr>
-            
-            <tr>
-                
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
-            
-            <tr>
-                
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
-            
-            <tr>
-                
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
-            
-            <tr>
-                
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
-            
-            <tr>
-               
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
-            
-            <tr>
-                
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
-            
-            <tr>
-                
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
+
       </table>
-    </div>
+      </div>
       <div class="container centrar">
-      <div class="container sticky-section">
+        <div class="container sticky-section">
         <h2>Productos Añadidos</h2>
         <button type="button" class="btn btn-success">Finalizar</button>
     </div>
     </div>
-    <div class="table-container">            
+ 
+
+    <div class="table-container">   
     <table class="table table-hover table-bordered">
-       
+        
         <th>NOMBRE</th>
         <th>PRECIO VENTA</th>
         <th>CATEGORIA</th>
@@ -239,97 +166,19 @@
         <th>Opcion</th>
 
         <tr>
-            
+
             <td>Papel</td>
             <td>Q 5.00</td>
             <td>Limpieza</td>
-            <td>54</td>
+            <td>545</td>
             <td>
                 <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
         </tr>
-        <tr>
-          
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-        <tr>
-            
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>54</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
+
     </table>
     </div>
+
     <div class="container-fluid">
         <div class="row justify-content-end">
             <div class="col-2">
@@ -341,7 +190,6 @@
             </div>
         </div>
     </div>
-    
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="<?php echo constant('URL') ?>views/js/table.js"></script> 

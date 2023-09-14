@@ -143,56 +143,56 @@
             <div class="table-container">
                 <!-- Contenido de la primera tabla -->
                 <table class="table table-hover table-bordered">
-                    <th>INGRESO ID</th>
+                    
                     <th>FECHA</th>
                     <th>TRABAJADOR ID</th>
                     <th>PROVEEDOR ID</th>
 
         
                     <tr>
-                        <td>1</td>
+                        
                         <td>50</td>
                         <td>Q 5.00</td>
                         <td>Q 10.00</td>
                  
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                       
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                       
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                       
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
                     <tr>
-                        <td>21/8/2023</td>
+                        
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
@@ -203,7 +203,7 @@
             <h2>Detalles ventas</h2>
             <div class="table-container">
                 <table class="table table-hover table-bordered">
-                    <th>ID</th>
+                   
                     <th>INGRESO ID</th>
                     <th>PRODUCTO ID</th>
                     <th>CANTIDAD</th>
@@ -212,7 +212,7 @@
 
         
                     <tr>
-                        <td>1</td>
+                        
                         <td>50</td>
                         <td>415</td>
                         <td>10</td>
@@ -221,77 +221,77 @@
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                       
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
              
                     </tr>
                     <tr>
-                        <td>123</td>
+                        
                         <td>Tenis</td>
                         <td>3</td>
                         <td>Q10</td>
