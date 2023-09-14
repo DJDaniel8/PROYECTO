@@ -82,13 +82,6 @@ document.getElementById("actualizarProducto").addEventListener("submit", functio
     } else {
         mensajes.push('Estructura de descripción válida ✔️');
     }
-    if(imagen.files.length > 0){
-        const imagenentrada = imagen.files[0];
-        mensajes.push('Imagen seleccionada ✔️');
-    } else {
-        mensajes.push('Ninguna imagen seleccionada ❌');
-        resultado = false;
-    }
     // Crear una lista de mensajes
     var listaMensajes = '<ul style="text-align: left;">';
     mensajes.forEach(function(mensaje) {
@@ -197,7 +190,7 @@ function AgregarFila(id, codigo, nombre, descripcion){
 function Actualizar(id, codigo, nombre, descripcion){
     idActualizar = id;
     codigoActualizar = codigo;
-    nombreidActualizar = nombre;
+    nombreActualizar = nombre;
     descripcionActualizar = descripcion;
 }
 

@@ -139,7 +139,7 @@
             <h2>Lista de productos</h2>
             <table class="table table-hover table-bordered">
                 <tbody id="CuerpoTabla">
-                <th>ID</th>
+                <tr>
                 <th>CODIGO</th>
                 <th>NOMBRE</th>
                 <th>DESCRIPCION</th>
