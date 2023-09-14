@@ -1,5 +1,7 @@
 <?php
 
+require 'models/Ingreso.php';
+
 class IngresosController extends ControllerBase{
 
 
@@ -7,6 +9,11 @@ class IngresosController extends ControllerBase{
     {
         parent::__construct();
         $this->isPublic = false;
+    }
+
+    function loadModel($model){
+        parent::loadModel($model);
+        //$this->Listar();
     }
 
     function render()
@@ -45,6 +52,70 @@ class IngresosController extends ControllerBase{
         unset($_SESSION['Rol']);
         session_destroy();
         $this->redirect('Login/');
+    }
+
+    function Crear(){
+        date_default_timezone_set('America/Guatemala');
+        $mensaje = "";
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $ingreso = new Ingreso();
+            $ingreso->fecha = date('d/m/Y');
+            $ingreso->personal->id = $_POST['personalId'];
+            $ingreso->proveedor = $_POST['proveedorId'];
+
+            $res = $this->model->insert($ingreso);
+            $id = $this->model->getLastId();
+            
+            if($res){
+                $mensaje = "Producto Insertado con Exito";
+            }
+            else{
+                $mensaje = "Hubo un erro al insertar el producto";
+            }
+        }
+        
+
+        $respuesta = array(
+            'Respuesta' => $res,
+            'Mensaje' => $mensaje,
+            'Valor' => $ingreso
+        );
+
+        header('Content-Type: application/json');
+        echo json_encode($respuesta);
+    }
+
+    function Listar(){
+        $res = $this->model->read();
+            
+        if(isset($res)){
+            $this->view->model = $res;
+        }   
+    }
+
+    function Eliminar(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $id = intval($_POST['id']);
+
+            $res = $this->model->delete($id);
+            
+            if($res){
+                $mensaje = "Ingreso Eliminado con Exito";
+            }
+            else{
+                $mensaje = "Hubo un error al Eliminar el Ingreso";
+            }
+        }
+
+        $respuesta = array(
+            'Respuesta' => $res,
+            'Mensaje' => $mensaje,
+            'Valor' => $id
+        );
+
+        header('Content-Type: application/json');
+        echo json_encode($respuesta);
+    
     }
 }
 
