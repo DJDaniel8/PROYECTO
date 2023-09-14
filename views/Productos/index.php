@@ -138,150 +138,39 @@
 
         <div class="container">
             <h2>Lista de productos</h2>
-            <div class="table-container">   
-                <table class="table table-hover table-bordered">
-                    <th>ID</th>
-                    <th>CODIGO</th>
-                    <th>NOMBRE</th>
-                    <th>DESCRIPCION</th>
-                    <th>IMAGEN</th>
-                    <th>OPCIONES</th>
-        
-            
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
+            <table class="table table-hover table-bordered">
+                <tbody id="CuerpoTabla">
+                <tr>
+                <th>CODIGO</th>
+                <th>NOMBRE</th>
+                <th>DESCRIPCION</th>
+                <th>OPCIONES</th>
+                </tr>
+                <?php   
+                    if (!empty($this->model)) {
+                        foreach ($this->model as $row) {
+                            echo '<tr model-target="'.$row->id.'">';
+                            echo "<td>{$row->codigo}</td>";
+                            echo "<td>{$row->nombre}</td>";
+                            echo "<td>{$row->descripcion}</td>";
+                            echo "<td>"; 
+                            echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
+                                    Eliminar
+                                    </button>';
+                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
+                                '.$row->id.",'".$row->codigo."','".$row->nombre."','".$row->descripcion."')".'">Actualizar</button>';
+                            echo "</td>";
+                            echo "</tr>";
+
                             
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
-                            
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
-                            
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
-                            
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
-                            
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
-                            
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>1</td>
-                        <td>2002</td>
-                        <td>Papel</td>
-                        <td>Papel para el *</td>
-                        <td>Imagen</td>
-                        <td>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-                Eliminar
-            </button>
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-                Actualizar
-            </button>
-                            
-                        </td>
-                    </tr>
-                </table>
-            </div>    
+                        }
+                    } else {
+                        var_dump($this->model);
+                    }
+
+                ?>
+                <tbody>
+            </table>
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
@@ -319,43 +208,6 @@
                         </div>
                     </div>
                 </form>        
-        <!--ELIMINAR PRODUCTO-->
-                <!-- Modal -->
-                <form method="post" id="eliminarProducto">
-                    <div class="modal" id="ModalEliminar">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- Encabezado del Modal -->
-                                <div class="modal-header">
-                                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/general-warning-sign.png" alt="general-warning-sign"/>
-                                    <button type="button" class="close" data-dismiss="modal" onclick="LimpiarEliminar()">&times;</button>
-                                </div>
-            
-                                <!-- Contenido del Modal -->
-                                <div class="modal-body">
-                                    <div class=" formulario">
-                                        <form action="">
-                                        <h2>Eliminar Producto</h2>
-                                            <label for="">ID</label>
-                                            <input type="text" readonly id="idProductoEliminar" name="id">
-                                    
-                                            <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreEliminar" id="nombreEliminar">
-    
-                                        </form>
-                                        </div>
-                                    
-                                </div>
-            
-                                <!-- Pie del Modal -->
-                                <div class="modal-footer">
-                                    <button type="submit " class="btn btn-success">Si</button>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarEliminar()">No</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
         <!--AGREGAR-->
                 <!-- Modal -->
                 <form method="post" id="crearProducto" >
