@@ -116,17 +116,10 @@
     <div class="container sticky-section">
         <h1>Facturación</h1>
         <div class="container">
-<<<<<<< HEAD
            <!-- <div class="input-group mb-3">
                 <h2>Buscar:</h2>
                 <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
             </div>-->
-=======
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
->>>>>>> upstream/main
         </div>
     </div>
     <div class="row">
