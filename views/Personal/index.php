@@ -139,9 +139,8 @@
                 </div>
             </div>
         <div class="container">
-        <h2>Lista de personal</h2>
+            <h2>Lista de personal</h2>
             <div class="table-container">
-                
                 <table class="table table-hover table-bordered">
                     <tbody id="CuerpoTabla">
                     <tr>
@@ -190,7 +189,6 @@
 
                     ?>
                     <tbody>
-
                 </table>
             </div>
         </div>

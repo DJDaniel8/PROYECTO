@@ -10,7 +10,7 @@ class ProductosModel extends ModelBase {
     }
 
     public function insert(Producto $producto){
-        $query = "INSERT INTO Productos (codigo, nombre, descripcion) VALUES (:codigo, :nombre, :descripcion, )";
+        $query = "INSERT INTO Productos (codigo, nombre, descripcion) VALUES (:codigo, :nombre, :descripcion )";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
         $resultadoQuery->bindParam(':codigo', $producto->codigo, PDO::PARAM_STR);

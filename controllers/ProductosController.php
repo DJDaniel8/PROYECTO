@@ -13,7 +13,7 @@ class ProductosController extends ControllerBase{
 
     function loadModel($model){
         parent::loadModel($model);
-        //$this->Listar();
+        $this->Listar();
     }
 
     function render()
