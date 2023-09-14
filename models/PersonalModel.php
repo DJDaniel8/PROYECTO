@@ -54,6 +54,7 @@ class PersonalModel extends ModelBase {
 
             
             $personal = new Personal();
+            $personal->id = $row['trabajadorId'];
             $personal->nombre = $row['nombre'];
             $personal->apellido = $row['apellido'];
             $personal->sexo = $row['sexo'];
@@ -62,9 +63,9 @@ class PersonalModel extends ModelBase {
             $personal->direccion = $row['direccion'];
             $personal->telefono = $row['telefono'];
             $personal->email = $row['email'];
-            $personal->sueldo = $row['sueldo'];
+            $personal->sueldo = floatval($row['sueldo']);
             $rol = new Rol();
-            $rol->id = $row['Id'];
+            $rol->id = intval($row['Id']);
             $rol->nombre = $row['nombrerol'];
             $personal->rol = $rol;
             array_push($personalArray, $personal);
@@ -75,21 +76,21 @@ class PersonalModel extends ModelBase {
     }
 
     public function update(Personal $personal){
-        $query = "UPDATE Trabajadores SET nombre = :nombre, apellido = :apellido, sexo = :sexo, puesto = :puesto, usuario = :usuario, direccion = :direccion, telefono = :telefono, email = :email, sueldo = :dueldo, rol = :rol
+        $query = "UPDATE Trabajadores SET nombre = :nombre, apellido = :apellido, sexo = :sexo, puesto = :puesto, usuario = :usuario, direccion = :direccion, telefono = :telefono, email = :email, sueldo = :sueldo, rol = :rol
         WHERE trabajadorId = :id";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
-        $resultadoQuery->bindParam(':id', $personal->id, PDO::PARAM_INT);
         $resultadoQuery->bindParam(':nombre', $personal->nombre, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':apellido', $personal->apellido, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sexo', $personal->sexo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':puesto', $personal->puesto, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
+        $resultadoQuery->bindParam(':usuario', $personal->usuario, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sueldo', $personal->sueldo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':rol', $personal->rol->id, PDO::PARAM_INT);
+        $resultadoQuery->bindParam(':id', $personal->id, PDO::PARAM_INT);
 
         
         $resultadoQuery->execute();
@@ -101,8 +102,6 @@ class PersonalModel extends ModelBase {
         else{
             return false;
         }
-
-
         
     }
 
@@ -125,7 +124,7 @@ class PersonalModel extends ModelBase {
     }
 
     public function getLastId(){
-        $query = "SELECT TOP(1) * From trabajadores ORDER BY trabajadorId desc";
+        $query = "SELECT TOP(1) * From Trabajadores ORDER BY trabajadorId desc";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
 

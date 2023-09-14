@@ -73,7 +73,7 @@ class PersonalController extends ControllerBase{
             $contrasena=$_POST['password'];
 
             $res = $this->model->insert($personal,$contrasena);
-            $id = $this->model->getLastId();
+            $personal->id = $this->model->getLastId();
             
 
             
@@ -116,8 +116,9 @@ class PersonalController extends ControllerBase{
             $personal->direccion = $_POST['direccion'];
             $personal->telefono = $_POST['telefono'];
             $personal->email = $_POST['email'];
-            $personal->sueldo = $_POST['sueldo'];
-            $personal->rol->id = $_POST['rol'];
+            $personal->sueldo = floatval($_POST['sueldo']);
+            $personal->rol = new Rol();
+            $personal->rol->id = intval($_POST['rol']);
 
             $res = $this->model->update($personal);
             

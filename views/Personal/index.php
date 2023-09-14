@@ -168,7 +168,7 @@
                             echo "<td>{$row->sueldo}</td>";
                             echo "<td>{$row->rol->nombre}</td>";
                             echo "<td>"; 
-                            echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
+                            echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
                                     Eliminar
                                     </button>';
                             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
@@ -176,6 +176,8 @@
                                 '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol->nombre."')".'">Actualizar</button>';
                             echo "</td>";
                             echo "</tr>";
+
+                            
                         }
                     } else {
                         var_dump($this->model);
@@ -205,7 +207,11 @@
                                             <label for="">APELLIDO</label>
                                             <input type="text" id="apellidoActualizar" name="apellido">
                                             <label for="">GENERO</label>
-                                            <input type="text" id="generoActualizar" name="genero">
+                                            <select name="genero" id="generoActualizar">
+                                                <option value="">Seleccione un genero</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
+                                            </select>
                                             <label for="">PUESTO</label>
                                             <input type="text" id="puestoActualizar" name="puesto">
                                             <label for="">USUARIO</label>
@@ -240,43 +246,7 @@
                     </div>
                 </form>
 
-        <!--ELIMINAR PRODUCTO-->
-                <!-- Modal -->
-                <form method="post" id="eliminarPersonal">
-                    <div class="modal" id="ModalEliminar">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- Encabezado del Modal -->
-                                <div class="modal-header">
-                                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/general-warning-sign.png" alt="general-warning-sign"/>
-                                    <button type="button" class="close" data-dismiss="modal" onclick="LimpiarEliminar()">&times;</button>
-                                </div>
-            
-                                <!-- Contenido del Modal -->
-                                <div class="modal-body">
-                                    <div class=" formulario">
-                                        
-                                        <h2>Eliminar Personal</h2>
-                                            <label for="">ID</label>
-                                            <input type="text" readonly>
-                                    
-                                            <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreEliminar">
-    
-                                        
-                                        </div>
-                                    
-                                </div>
-            
-                                <!-- Pie del Modal -->
-                                <div class="modal-footer">
-                                    <button type="submit " class="btn btn-success">Si</button>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarEliminar()">No</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+        
             <!--AGREGAR -->
                     <!-- Modal -->
                 <form method="post" id="crearPersonal">

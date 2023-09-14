@@ -11,7 +11,7 @@ class Personal{
     public $direccion;
     public $telefono;
     public $email;
-    public $sueldo;
+    public float $sueldo;
     public Rol $rol;
 }
 

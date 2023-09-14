@@ -2,7 +2,7 @@
 
 class Rol{
 
-    public $id;
+    public int $id;
     public $nombre;
 }
 

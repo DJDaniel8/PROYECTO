@@ -126,32 +126,7 @@ document.getElementById("crearPersonal").addEventListener("submit", function(eve
 
 
 
-document.getElementById("eliminarPersonal").addEventListener("submit", function(event) {
-    event.preventDefault(); // Detener la recarga automática de la página
-    var nombreEliminar = document.getElementById("nombreEliminar");
-    var mensajes = []; // Usamos un array para almacenar los mensajes
-    var resultado = true;
-    const regexNombre = /^[a-zA-Z]+$/;
-    if(regexNombre.test(nombreEliminar.value)){
-        mensajes.push('Buena estructura del nombre ✔️');
-    }else{
-        mensajes.push('Agregue un nombre o verifique su estructura ❌');
-        resultado = false;
-    }
-    // Crear una lista de mensajes
-    var listaMensajes = '<ul style="text-align: left;">'; 
-    mensajes.forEach(function(mensaje) {
-        listaMensajes += '<li>' + mensaje + '</li>';
-    });
-    listaMensajes += '</ul>';
-    
-    Swal.fire({
-        title: 'Validación de Datos',
-        html: listaMensajes,
-        icon: resultado ? 'success' : 'error',
-        confirmButtonText: 'Ok'
-    });
-});
+
 
 
 document.getElementById("actualizarPersonal").addEventListener("submit", function(event) {
@@ -159,6 +134,7 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
     var nombreActualizar = document.getElementById("nombreActualizar");
     var apellidoActualizar = document.getElementById("apellidoActualizar");
     var puestoActualizar = document.getElementById("puestoActualizar");
+    var generoActualizar = document.getElementById("generoActualizar");
     var usuarioActualizar = document.getElementById("usuarioActualizar");
     var contraseñaActualizar = document.getElementById("contraseñaActualizar");
     var direccionActualizar = document.getElementById("direccionActualizar");
@@ -201,12 +177,6 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
         mensajes.push('Agregue un usuario o verifique su estructura ❌');
         resultado = false;
     }
-    if(regexPassword.test(contraseñaActualizar.value)){
-        mensajes.push('Buena estructura de la contraseña ✔️');
-    }else{
-        mensajes.push('Agregue una contrseña o verifique su estructura ❌');
-        resultado = false;
-    }
     if(regexDireccion.test(direccionActualizar.value)){
         mensajes.push('Buena estructura de la dirección ✔️');
     }else{
@@ -246,16 +216,16 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
     
     if(resultado){
         actualizarPersonal(actulizarId,
-            actualizarNombre.value,
-            actualizarApellido.value,
-            actualizarGenero.value,
-            actualizarPuesto.value,
-            actualizarUsuario.value,
-            actualizarDireccion.value,
-            actualizarTelefono.value,
-            actualizarEmail.value,
-            actualizarSueldo.value,
-            actualizarRol.value);
+            nombreActualizar.value,
+            apellidoActualizar.value,
+            generoActualizar.value,
+            puestoActualizar.value,
+            usuarioActualizar.value,
+            direccionActualizar.value,
+            telefonoActualizar.value,
+            emailActualizar.value,
+            sueldoActualizar.value,
+            rolAgctualizar.value);
     }
     else{
         Swal.fire({
@@ -347,7 +317,11 @@ function AgregarFila(id, nombre, apellido, genero, puesto, usuario, direccion, t
     nuevaCeldaSueldo.textContent = sueldo;
 
     var nuevaCeldaRol = document.createElement('td');
-    nuevaCeldaRol.textContent = rol;
+    var rolnombre;
+    if(rol.id == 1) rolnombre = "Administrador";
+    else if(rol.id == 2) rolnombre = "Vendedor";
+    else if(rol.id == 3) rolnombre = "Bodeguero";
+    nuevaCeldaRol.textContent = rolnombre;
 
 
     var boton = document.createElement("button");
@@ -508,7 +482,11 @@ function actualizarFila(id, nombre, apellido, genero, puesto, usuario, direccion
     fila.cells[6].textContent = telefono;
     fila.cells[7].textContent = email;
     fila.cells[8].textContent = sueldo;
-    fila.cells[9].textContent = rol;
+    var nombreRol;
+    if(rol == 1) nombreRol = "Administrador";
+    else if(rol == 2) nombreRol = "Vendedor";
+    else if(rol == 3) nombreRol = "Bodeguero";
+    fila.cells[9].textContent = nombreRol;
     var boton = fila.querySelector('button[data-toggle]');
     if (boton) {
         boton.onclick = function() {
@@ -525,7 +503,6 @@ function LimpiarActualizar(){
     document.getElementById("apellidoActualizar").value="";
     document.getElementById("puestoActualizar").value="";
     document.getElementById("usuarioActualizar").value="";
-    document.getElementById("contraseñaActualizar").value="";
     document.getElementById("direccionActualizar").value="";
     document.getElementById("telefonoActualizar").value="";
     document.getElementById("emailActualizar").value="";
