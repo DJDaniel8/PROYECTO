@@ -138,37 +138,41 @@
         <div class="container">
             <h2>Lista de Clientes</h2>
             <table class="table table-hover table-bordered">
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
-                <th>GENERO</th>
-                <th>NIT</th>
-                <th>DIRECCION</th>
-                <th>TELEFONO</th>
-                <th>EMAIL</th>
-                <th>Opciones</th>
-        
-                <tr>
-                <td>Daniel</td>
-                <td>Fuentes</td>
-                <td>Masculino</td>
-                <td>45454454</td>
-                <td>San marcos</td>
-                <td>5487-0220</td>
-                <td>fuentes@gmail.com</td>
-    
-               
-                <td>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-            Eliminar
-        </button>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-            Actualizar
-        </button>
-                        
-                    </td>
-                </tr>
+                <tbody id="CuerpoTabla">
+                    <tr>
+                            <th>NOMBRE</th>
+                            <th>APELLIDO</th>
+                            <th>GENERO</th>
+                            <th>NIT</th>
+                            <th>DIRECCION</th>
+                            <th>TELEFONO</th>
+                            <th>EMAIL</th>
+                            <th>Opciones</th>
+                    </tr>
+                    <?php
+                        foreach ($this->model as $key => $row) {
+                            echo '<tr model-target="'.$row->id.'">';
+                            echo "<td>{$row->nombre}</td>";
+                            echo "<td>{$row->apellido}</td>";
+                            echo "<td>{$row->sexo}</td>";
+                            echo "<td>{$row->nit}</td>";
+                            echo "<td>{$row->direccion}</td>";
+                            echo "<td>{$row->telefono}</td>";
+                            echo "<td>{$row->email}</td>";
+                            echo "<td>";
+                            echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
+                                 Eliminar
+                                 </button>';
+                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->nit."','".$row->direccion."','".$row->telefono."','".$row->email."')".'">
+                                Actualizar
+                                </button> ';
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                    ?>
+   
+                </tbody>
+
             </table>
         </div>
         <form method="post" id="actualizarCliente">
@@ -191,7 +195,7 @@
                                         <input type="text" id="apellidoActualizar" name="apellido">
                                         <label for="">GENERO</label>
                                         <select name="genero" id="generoActualizar">
-                                            <option></option>
+                                        <option value="">Seleccione un genero</option>
                                             <option value="masculino">Masculino</option>
                                             <option value="femenino">Femenino</option>
                                         </select>
@@ -264,7 +268,7 @@
                                             <input type="text" id="apellidoCrear" name="apellido">
                                             <label for="">GENERO</label>
                                             <select name="genero" id="generoCrear">
-                                                <option ></option>
+                                            <option value="">Seleccione un genero</option>
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                             </select>
