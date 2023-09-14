@@ -258,7 +258,7 @@ function actualizarProducto(id, codigo, nombre, descripcion){
             formulario.append('codigo', codigo);
             formulario.append('nombre', nombre);
             formulario.append('descripcion', descripcion);
-            fetch(url+"Personal/Actualizar", {
+            fetch(url+"Productos/Actualizar", {
             method: "POST",
             body: formulario,
             })
@@ -288,10 +288,7 @@ function actualizarFila(id, codigo, nombre, descripcion){
     fila.cells[1].textContent = nombre;
     fila.cells[2].textContent = descripcion;
     var nombreRol;
-    if(rol == 1) nombreRol = "Administrador";
-    else if(rol == 2) nombreRol = "Vendedor";
-    else if(rol == 3) nombreRol = "Bodeguero";
-    fila.cells[9].textContent = nombreRol;
+
     var boton = fila.querySelector('button[data-toggle]');
     if (boton) {
         boton.onclick = function() {
