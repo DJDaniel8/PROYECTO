@@ -144,18 +144,15 @@
             <h2>Historial de ventas</h2>
                 <!-- Contenido de la primera tabla -->
                 <table class="table table-hover table-bordered">
-                    <th>INGRESO ID</th>
                     <th>FECHA</th>
-                    <th>TRABAJADOR ID</th>
-                    <th>PROVEEDOR ID</th>
+                    <th>PROVEEDOR</th>
+                    <th>TOTAL</th>
 
         
                     <tr>
-                        <td>1</td>
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                 
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
                     </tr>
               </table>
       
@@ -163,21 +160,17 @@
         <div class="col-md-6">
             <h2>Detalles ventas</h2>
                 <table class="table table-hover table-bordered">
-                    <th>ID</th>
-                    <th>INGRESO ID</th>
-                    <th>PRODUCTO ID</th>
+                    <th>CODIGO</th>
+                    <th>NOMBRE</th>
                     <th>CANTIDAD</th>
                     <th>PRECIO COMPRA</th>
-                    <th>STOCK ID</th>
 
         
                     <tr>
-                        <td>1</td>
-                        <td>50</td>
-                        <td>415</td>
-                        <td>10</td>
-                        <td>4545</td>
-                        <td>01</td>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
              
                     </tr>
             
