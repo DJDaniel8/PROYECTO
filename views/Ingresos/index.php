@@ -156,9 +156,48 @@
                         <td>Q 10.00</td>
                  
                     </tr>
-
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
               </table>
-      </div>
+            </div>
         </div>
         <div class="col-md-6">
             <h2>Detalles ventas</h2>
@@ -181,9 +220,85 @@
                         <td>01</td>
              
                     </tr>
-
-            </table>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
             
+            </table>
             </div>
         </div>
     </div>
@@ -193,6 +308,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../js/ingresosApp.js"></script>
+<script src="<?php echo constant('URL') ?>views/js/ingresosApp.js"></script>
 </body>
 </html>

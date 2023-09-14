@@ -65,14 +65,24 @@ class IngresosController extends ControllerBase{
             $ingreso->personal->id = $_POST['personalId'];
             $ingreso->proveedor = $_POST['proveedorId'];
 
+            $productosJSON = $_POST['productos'];
+            $productos = json_decode($productosJSON);
+
+            if($productos){
+
+            }
+            else{
+                $mensaje .= "No pude acceder al Objeto JSON";
+            }
+
             $res = $this->model->insert($ingreso);
             $id = $this->model->getLastId();
             
             if($res){
-                $mensaje = "Producto Insertado con Exito";
+                $mensaje .= "Producto Insertado con Exito";
             }
             else{
-                $mensaje = "Hubo un erro al insertar el producto";
+                $mensaje .= "Hubo un erro al insertar el producto";
             }
         }
         
@@ -128,6 +138,31 @@ class IngresosController extends ControllerBase{
         else{
             return array('No definido');
         }
+    }
+
+    function cargarProductos(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $id = intval($_POST['id']);
+
+            $res = $this->model->getProductosByProveedorId($id);
+            
+            if(isset($res)){
+                $mensaje = "Ingreso Eliminado con Exito";
+            }
+            else{
+                $mensaje = "Hubo un error al Eliminar el Ingreso";
+            }
+        }
+
+        $respuesta = array(
+            'Respuesta' => isset($res),
+            'Mensaje' => $mensaje,
+            'Valor' => $res
+        );
+
+        header('Content-Type: application/json');
+        echo json_encode($respuesta);
+    
     }
 }
 

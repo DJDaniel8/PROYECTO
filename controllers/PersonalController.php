@@ -68,12 +68,23 @@ class PersonalController extends ControllerBase{
             $personal->telefono = $_POST['telefono'];
             $personal->email = $_POST['email'];
             $personal->sueldo = $_POST['sueldo'];
+<<<<<<< HEAD
             $contrasena=$_POST['password'];
             $rol= new Rol();
             $rol->id=$_POST['rol'];
             $personal->rol=$rol;
             $res = $this->model->insert($personal,$contrasena);
             $id = $this->model->getLastId();
+=======
+            $personal->rol = new Rol();
+            $personal->rol->id = intval($_POST['rol']);
+            $contrasena=$_POST['password'];
+
+            $res = $this->model->insert($personal,$contrasena);
+            $personal->id = $this->model->getLastId();
+            
+
+>>>>>>> upstream/main
             
             if($res){
                 $mensaje = "Personal Insertado con Exito";
