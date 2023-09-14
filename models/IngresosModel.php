@@ -2,6 +2,7 @@
 
 require_once 'models/Ingreso.php';
 require_once 'models/Proveedor.php';
+require_once 'models/Producto.php';
 
 class IngresosModel extends ModelBase {
 
@@ -114,6 +115,30 @@ class IngresosModel extends ModelBase {
         }
 
         return $proveedores;
+    }
+
+    public function getProductosByProveedorId($id){
+        $productos = array();
+        $query = "SELECT * FROM Productos WHERE proveedorId = :id";
+        $conexion = $this->db->connect();
+        $resultadoQuery = $conexion->prepare($query);   
+        $resultadoQuery->bindParam(':id', $id, PDO::PARAM_INT);
+
+        
+        $resultadoQuery->execute();
+        
+        while ($row = $resultadoQuery->fetch()) {
+            $producto = new Producto();
+
+            $producto->id=$row['productoId'];
+            $producto->codigo=$row['codigo'];
+            $producto->nombre=$row['nombre'];
+            $producto->descripcion=$row['descripcion'];
+            
+            array_push($productos, $producto);
+        }
+
+        return $productos;
     }
     
 
