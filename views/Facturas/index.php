@@ -113,56 +113,311 @@
         </nav>
         <!--FIN DE NAVBAR-->
 <div class="container">
-    <h1>Facturación</h1>
-    <div class="container">
-        <div class="input-group mb-3">
-            <h2>Buscar:</h2>
-            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="container sticky-section">
+        <h1>Facturación</h1>
+        <div class="container">
+            <div class="input-group mb-3">
+                <h2>Buscar:</h2>
+                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <h2>Historial de ventas</h2>
                 <!-- Contenido de la primera tabla -->
-                <table class="table table-hover table-bordered">
-                    <th>VENTA ID</th>
-                    <th>CLIENTE ID</th>
-                    <th>TRABAJADOR ID</th>
-                    <th>FECHA</th>
-                    <th>NOMBRE</th>
-                    <th>NIT</th>
-        
-                    <tr>
-                        <td>1</td>
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>4545</td>
-                    </tr>
+                <div class="table-container">
+                    <table class="table table-hover table-bordered">
+                        <th>VENTA ID</th>
+                        <th>CLIENTE ID</th>
+                        <th>TRABAJADOR ID</th>
+                        <th>FECHA</th>
+                        <th>NOMBRE</th>
+                        <th>NIT</th>
             
-            </table>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>Q 9.00</td>
+                            <td>4545</td>
+                        </tr>
+                
+                
+                    </table>
+                </div>
         </div>
         <div class="col-md-6">
-            <h2>Detalles ventas</h2>
-                <table class="table table-hover table-bordered">
-                    <th>ID</th>
-                    <th>VENTA ID</th>
-                    <th>STOCK ID</th>
-                    <th>CANTIDAD</th>
-                    <th>PRECIO VENTA</th>
+        <h2>Detalles ventas</h2>
+            <div class="table-container">
+                    <table class="table table-hover table-bordered">
+                        <th>ID</th>
+                        <th>VENTA ID</th>
+                        <th>STOCK ID</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO VENTA</th>
 
-        
-                    <tr>
-                        <td>1</td>
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>4545</td>
-             
-                    </tr>
-              </table>
-           
+            
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>Q 5.00</td>
+                            <td>Q 10.00</td>
+                            <td>4545</td>
+                
+                        </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -171,5 +426,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

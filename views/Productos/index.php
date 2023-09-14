@@ -119,52 +119,169 @@
         </nav>
         <!--FIN DE NAVBAR-->
     <div class="container mt-5">
-        <h1>Productos</h1>
-        <div class="container">
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="container sticky-section">
+            <h1>Productos</h1>
+            <div class="container">
+                <div class="input-group mb-3">
+                    <h2>Buscar:</h2>
+                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="container">
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+                Agregar Producto
+            </button>
             </div>
         </div>
-        <div class="container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
-            Agregar Producto
-        </button>
-        </div>
-
 
 
         <div class="container">
             <h2>Lista de productos</h2>
-            <table class="table table-hover table-bordered">
-                <th>ID</th>
-                <th>CODIGO</th>
-                <th>NOMBRE</th>
-                <th>DESCRIPCION</th>
-                <th>IMAGEN</th>
-                <th>OPCIONES</th>
-    
+            <div class="table-container">   
+                <table class="table table-hover table-bordered">
+                    <th>ID</th>
+                    <th>CODIGO</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCION</th>
+                    <th>IMAGEN</th>
+                    <th>OPCIONES</th>
         
-                <tr>
-                    <td>1</td>
-                    <td>2002</td>
-                    <td>Papel</td>
-                    <td>Papel para el *</td>
-                    <td>Imagen</td>
-                    <td>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
-            Eliminar
-        </button>
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
-            Actualizar
-        </button>
-                        
-                    </td>
-                </tr>
-            </table>
+            
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>2002</td>
+                        <td>Papel</td>
+                        <td>Papel para el *</td>
+                        <td>Imagen</td>
+                        <td>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                Eliminar
+            </button>
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar">
+                Actualizar
+            </button>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </div>    
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
@@ -281,5 +398,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL') ?>views/js/productoApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

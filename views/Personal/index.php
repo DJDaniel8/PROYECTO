@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/estilosGenerales.css">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/background.css">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/navBar.css">
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" href="/views/img/icon.png" type="image/x-icon">
 </head>
@@ -122,70 +123,76 @@
 
 
         <div class="container mt-5">
-            <h1>Personal</h1>
-            <div class="container">
-                <div class="input-group mb-3">
-                    <h2>Buscar:</h2>
-                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="container sticky-section">
+                <h1>Personal</h1>
+                    <div class="container">
+                        <div class="input-group mb-3">
+                            <h2>Buscar:</h2>
+                            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                <div class="container">
+                <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#agregarPersonal">
+                    Nuevo personal
+                </button>
                 </div>
             </div>
-            <div class="container">
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#agregarPersonal">
-                Nuevo personal
-            </button>
-            </div>
         <div class="container">
-            <h2>Lista de personal</h2>
-            <table class="table table-hover table-bordered">
-                <tbody id="CuerpoTabla">
-                <tr>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>GENERO</th>
-                    <th>PUESTO</th>
-                    <th>USUARIO</th>
-                    <th>DIRECCION</th>
-                    <th>TELEFONO</th>
-                    <th>EMAIL</th>
-                    <th>SUELDO</th>
-                    <th>ROL</th>
-                    <th>OPCIONES</th>   
-                </tr>
+        <h2>Lista de personal</h2>
+            <div class="table-container">
+                
+                <table class="table table-hover table-bordered">
+                    <tbody id="CuerpoTabla">
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>GENERO</th>
+                        <th>PUESTO</th>
+                        <th>USUARIO</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th>EMAIL</th>
+                        <th>SUELDO</th>
+                        <th>ROL</th>
+                        <th>OPCIONES</th>   
+                    </tr>
 
-                <?php   
-                    if (!empty($this->model)) {
-                        foreach ($this->model as $row) {
-                            echo '<tr model-target="'.$row->id.'">';
-                            echo "<td>{$row->nombre}</td>";
-                            echo "<td>{$row->apellido}</td>";
-                            echo "<td>{$row->sexo}</td>";
-                            echo "<td>{$row->puesto}</td>";
-                            echo "<td>{$row->usuario}</td>";
-                            echo "<td>{$row->direccion}</td>";
-                            echo "<td>{$row->telefono}</td>";
-                            echo "<td>{$row->email}</td>";
-                            echo "<td>{$row->sueldo}</td>";
-                            echo "<td>{$row->rol->nombre}</td>";
-                            echo "<td>"; 
-                            echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
-                                    Eliminar
-                                    </button>';
-                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
-                                '.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->puesto."','".$row->usuario."',
-                                '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol->nombre."')".'">Actualizar</button>';
-                            echo "</td>";
-                            echo "</tr>";
+                    <?php   
+                        if (!empty($this->model)) {
+                            foreach ($this->model as $row) {
+                                echo '<tr model-target="'.$row->id.'">';
+                                echo "<td>{$row->nombre}</td>";
+                                echo "<td>{$row->apellido}</td>";
+                                echo "<td>{$row->sexo}</td>";
+                                echo "<td>{$row->puesto}</td>";
+                                echo "<td>{$row->usuario}</td>";
+                                echo "<td>{$row->direccion}</td>";
+                                echo "<td>{$row->telefono}</td>";
+                                echo "<td>{$row->email}</td>";
+                                echo "<td>{$row->sueldo}</td>";
+                                echo "<td>{$row->rol->nombre}</td>";
+                                echo "<td>"; 
+                                echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
+                                        Eliminar
+                                        </button>';
+                                echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
+                                    '.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->puesto."','".$row->usuario."',
+                                    '".$row->direccion."','".$row->telefono."','".$row->email."','".$row->sueldo."','".$row->rol->nombre."')".'">Actualizar</button>';
+                                echo "</td>";
+                                echo "</tr>";
 
-                            
+                                
+                            }
+                        } else {
+                            var_dump($this->model);
                         }
-                    } else {
-                        var_dump($this->model);
-                    }
 
-                ?>
-                <tbody>
-            </table>
+                    ?>
+                    <tbody>
+
+                </table>
+            </div>
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
@@ -315,5 +322,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL') ?>views/js/personalApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

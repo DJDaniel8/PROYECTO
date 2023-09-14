@@ -24,7 +24,7 @@
 
             <div class="input-field">
                 <input type="text" class="input" placeholder="Nombre de usuario" required id="usuario"
-                name="usuario"> 
+                name="usuario" autocomplete="off"> 
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-field">

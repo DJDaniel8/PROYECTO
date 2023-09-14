@@ -112,7 +112,9 @@
             </ul>
         </nav>
         <!--FIN DE NAVBAR-->
+<div class="content-container">
 <div class="container">
+<div class="container sticky-section">
     <h1>Ventas</h1>
     <div class="container">
         <div class="input-group mb-3">
@@ -121,9 +123,11 @@
         </div>
     </div>
     
-
+</div>
+    <div class="table-container">
     <table class="table table-hover table-bordered">
-            <th>ID</th>
+
+            
             <th>NOMBRE</th>
             <th>PRECIO VENTA</th>
             <th>CATEGORIA</th>
@@ -131,7 +135,84 @@
             <th>Opcion</th>
 
             <tr>
-                <td>1</td>
+              
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+               
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td>Papel</td>
+                <td>Q 5.00</td>
+                <td>Limpieza</td>
+                <td>54</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                </td>
+            </tr>
+            
+            <tr>
+                
                 <td>Papel</td>
                 <td>Q 5.00</td>
                 <td>Limpieza</td>
@@ -141,14 +222,16 @@
                 </td>
             </tr>
       </table>
+    </div>
       <div class="container centrar">
+      <div class="container sticky-section">
         <h2>Productos Añadidos</h2>
         <button type="button" class="btn btn-success">Finalizar</button>
     </div>
-
-                
+    </div>
+    <div class="table-container">            
     <table class="table table-hover table-bordered">
-        <th>ID</th>
+       
         <th>NOMBRE</th>
         <th>PRECIO VENTA</th>
         <th>CATEGORIA</th>
@@ -156,7 +239,87 @@
         <th>Opcion</th>
 
         <tr>
-            <td>1</td>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+          
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>Papel</td>
+            <td>Q 5.00</td>
+            <td>Limpieza</td>
+            <td>54</td>
+            <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+        <tr>
+            
             <td>Papel</td>
             <td>Q 5.00</td>
             <td>Limpieza</td>
@@ -166,6 +329,7 @@
             </td>
         </tr>
     </table>
+    </div>
     <div class="container-fluid">
         <div class="row justify-content-end">
             <div class="col-2">
@@ -178,8 +342,8 @@
         </div>
     </div>
     
-
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="<?php echo constant('URL') ?>views/js/table.js"></script> 
 </body>
 </html>
