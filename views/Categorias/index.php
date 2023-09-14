@@ -119,42 +119,47 @@
         <!--FIN DE NAVBAR-->
 
     <div class="container mt-5">
-        <h1>Categorias</h1>
-        <div class="container">
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="container sticky-section">
+            <h1>Categorias</h1>
+            <div class="container">
+                <!--<div class="input-group mb-3">
+                    <h2>Buscar:</h2>
+                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                </div>-->
+                
             </div>
+            <div class="container">
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+                Nueva categoria
+            </button>
+            </div>
+
         </div>
-        <div class="container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
-            Nueva categoria
-        </button>
-        </div>
-
-
 
         <div class="container">
-            <h2>Lista de categorias</h2>
-            <table class="table table-hover table-bordered">
-                <tbody id="CuerpoTabla">
-                    <tr>
-                        <th>NOMBRE</th>
-                        <th>Opciones</th>
-                    </tr>
+        <h2>Lista de categorias</h2>
+            <div class="table-container">
+                
+                <table class="table table-hover table-bordered">
+                    <tbody id="CuerpoTabla">
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>Opciones</th>
+                        </tr>
 
-                    <?php
-                    foreach ($this->model as $row) {
-                        echo "<tr model-target=\"{$row[0]}\"><td>{$row[1]}</td>";
-                        echo '<td><button type="button" class="btn btn-danger" onclick="Eliminar('.$row[0].')">Eliminar </button>';
-                        echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row[0].",'".$row[1]."')".'">Actualizar</button>';
-                        echo "</td></tr>";
-                    }   
+                        <?php
+                        foreach ($this->model as $row) {
+                            echo "<tr model-target=\"{$row[0]}\"><td>{$row[1]}</td>";
+                            echo '<td><button type="button" class="btn btn-danger" onclick="Eliminar('.$row[0].')">Eliminar </button>';
+                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row[0].",'".$row[1]."')".'">Actualizar</button>';
+                            echo "</td></tr>";
+                        }   
 
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!--ACTUALIZAR Categoria-->
                 <!-- Modal -->
@@ -172,7 +177,7 @@
                                     <div class=" formulario">
                                         <h2>Actualizar categoria</h2>
                                             <label for="nombreCategoria">NOMBRE</label>
-                                            <input type="text" id="nombreCategoriaActualizar" name="nombreCategoria">
+                                            <input type="text" id="nombreCategoriaActualizar" name="nombreCategoria" autocomplete="off">
                                             
                                             <button type="submit" class="btn btn-success">Actualizar Categoria</button>
                                         </div>
@@ -233,7 +238,7 @@
                                 
                                 <h2>Agregar categoria</h2>
                                 <label for="">NOMBRE</label>
-                                <input type="text" id="nombreCategoria" name="nombreCategoria">
+                                <input type="text" id="nombreCategoria" name="nombreCategoria" autocomplete="off">
                                 
                                 <button type="submit " class="btn btn-success" >Agregar categoria</button>
                                 
@@ -256,5 +261,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL')?>views/js/categoriaApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

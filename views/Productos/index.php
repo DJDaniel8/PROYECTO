@@ -119,24 +119,26 @@
         </nav>
         <!--FIN DE NAVBAR-->
     <div class="container mt-5">
-        <h1>Productos</h1>
-        <div class="container">
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="container sticky-section">
+            <h1>Productos</h1>
+            <div class="container">
+                <div class="input-group mb-3">
+                    <h2>Buscar:</h2>
+                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="container">
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+                Agregar Producto
+            </button>
             </div>
         </div>
-        <div class="container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
-            Agregar Producto
-        </button>
-        </div>
-
 
 
         <div class="container">
             <h2>Lista de productos</h2>
+
             <table class="table table-hover table-bordered">
                 <tbody id="CuerpoTabla">
                 <tr>
@@ -170,6 +172,7 @@
                 ?>
                 <tbody>
             </table>
+
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
@@ -249,5 +252,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL') ?>views/js/productoApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

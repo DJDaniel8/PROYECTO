@@ -119,56 +119,59 @@
         <!--FIN DE NAVBAR-->
 
     <div class="container mt-5">
-        <h1>Proveedores</h1>
-        <div class="container">
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="container sticky-section">
+            <h1>Proveedores</h1>
+            <div class="container">
+                <div class="input-group mb-3">
+                    <h2>Buscar:</h2>
+                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="container">
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+                Nuevo Proveedor
+            </button>
             </div>
         </div>
-        <div class="container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
-            Nuevo Proveedor
-        </button>
-        </div>
-
 
 
         <div class="container">
             <h2>Lista de categoria</h2>
-            <table class="table table-hover table-bordered">
-                <tbody id="CuerpoTabla">
-                    <tr>
-                        <th>RAZON SOCIAL</th>
-                        <th>DIRECCION</th>
-                        <th>TELEFONO</th>
-                        <th>OPCIONES</th>
-                    </tr>
-                    
-                    <?php
+            <div class="table-container">
+                <table class="table table-hover table-bordered">
+                    <tbody id="CuerpoTabla">
+                        <tr>
+                            <th>RAZON SOCIAL</th>
+                            <th>DIRECCION</th>
+                            <th>TELEFONO</th>
+                            <th>OPCIONES</th>
+                        </tr>
+                        
+                        <?php
 
-                    foreach ($this->model as $row) {
-                        echo '<tr model-target="'.$row->id.'">';
-                        echo "<td>{$row->razonSocial}</td>";
-                        echo "<td>{$row->direccion}</td>";
-                        echo "<td>{$row->telefono}</td>";
-                        echo "<td>";
-                        echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
-                                Eliminar
-                                </button>';
-                        echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->razonSocial."','".$row->direccion."','".$row->telefono."')".'">
-                                    Actualizar
-                                </button>';
-                        echo "</td>";
-                        echo "</tr>";
-                    }
+                        foreach ($this->model as $row) {
+                            echo '<tr model-target="'.$row->id.'">';
+                            echo "<td>{$row->razonSocial}</td>";
+                            echo "<td>{$row->direccion}</td>";
+                            echo "<td>{$row->telefono}</td>";
+                            echo "<td>";
+                            echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
+                                    Eliminar
+                                    </button>';
+                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->razonSocial."','".$row->direccion."','".$row->telefono."')".'">
+                                        Actualizar
+                                    </button>';
+                            echo "</td>";
+                            echo "</tr>";
+                        }
 
 
-                    ?>
-                    
-                </tbody>
-            </table>
+                        ?>
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
@@ -281,5 +284,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL') ?>views/js/proveedoresApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

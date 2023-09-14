@@ -119,61 +119,64 @@
         <!--FIN DE NAVBAR-->
     
     <div class="container mt-5">
-        <h1>Clientes</h1>
-        <div class="container">
-            <div class="input-group mb-3">
-                <h2>Buscar:</h2>
-                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="container sticky-section">
+            <h1>Clientes</h1>
+            <div class="container">
+                <div class="input-group mb-3">
+                    <h2>Buscar:</h2>
+                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="container">
+            <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+                Nuevo Cliente
+            </button>
             </div>
         </div>
-        <div class="container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
-            Nuevo Cliente
-        </button>
-        </div>
-
 
 
         <div class="container">
-            <h2>Lista de Clientes</h2>
-            <table class="table table-hover table-bordered">
-                <tbody id="CuerpoTabla">
-                    <tr>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>GENERO</th>
-                            <th>NIT</th>
-                            <th>DIRECCION</th>
-                            <th>TELEFONO</th>
-                            <th>EMAIL</th>
-                            <th>Opciones</th>
-                    </tr>
-                    <?php
-                        foreach ($this->model as $key => $row) {
-                            echo '<tr model-target="'.$row->id.'">';
-                            echo "<td>{$row->nombre}</td>";
-                            echo "<td>{$row->apellido}</td>";
-                            echo "<td>{$row->sexo}</td>";
-                            echo "<td>{$row->nit}</td>";
-                            echo "<td>{$row->direccion}</td>";
-                            echo "<td>{$row->telefono}</td>";
-                            echo "<td>{$row->email}</td>";
-                            echo "<td>";
-                            echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
-                                 Eliminar
-                                 </button>';
-                            echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->nit."','".$row->direccion."','".$row->telefono."','".$row->email."')".'">
-                                Actualizar
-                                </button> ';
-                            echo "</td>";
-                            echo "</tr>";
-                        }
-                    ?>
-   
-                </tbody>
+        <h2>Lista de Clientes</h2>
+            <div class="table-container">
+                <table class="table table-hover table-bordered">
+                    <tbody id="CuerpoTabla">
+                        <tr>
+                                <th>NOMBRE</th>
+                                <th>APELLIDO</th>
+                                <th>GENERO</th>
+                                <th>NIT</th>
+                                <th>DIRECCION</th>
+                                <th>TELEFONO</th>
+                                <th>EMAIL</th>
+                                <th>Opciones</th>
+                        </tr>
+                        <?php
+                            foreach ($this->model as $key => $row) {
+                                echo '<tr model-target="'.$row->id.'">';
+                                echo "<td>{$row->nombre}</td>";
+                                echo "<td>{$row->apellido}</td>";
+                                echo "<td>{$row->sexo}</td>";
+                                echo "<td>{$row->nit}</td>";
+                                echo "<td>{$row->direccion}</td>";
+                                echo "<td>{$row->telefono}</td>";
+                                echo "<td>{$row->email}</td>";
+                                echo "<td>";
+                                echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" onclick="Eliminar('.$row->id.')">
+                                    Eliminar
+                                    </button>';
+                                echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->nombre."','".$row->apellido."','".$row->sexo."','".$row->nit."','".$row->direccion."','".$row->telefono."','".$row->email."')".'">
+                                    Actualizar
+                                    </button> ';
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                        ?>
+    
+                    </tbody>
 
-            </table>
+                </table>
+            </div>
         </div>
         <form method="post" id="actualizarCliente">
              <!--ACTUALIZAR PRODUCTO-->
@@ -190,9 +193,9 @@
                                     
                                     <h2>Actualizar cliente</h2>
                                         <label for="">NOMBRE</label>
-                                        <input type="text" id="nombreActualizar" name="nombre">
+                                        <input type="text" id="nombreActualizar" name="nombre" autocomplete="off">
                                         <label for="">APELLIDO</label>
-                                        <input type="text" id="apellidoActualizar" name="apellido">
+                                        <input type="text" id="apellidoActualizar" name="apellido" autocomplete="off">
                                         <label for="">GENERO</label>
                                         <select name="genero" id="generoActualizar">
                                         <option value="">Seleccione un genero</option>
@@ -200,13 +203,13 @@
                                             <option value="femenino">Femenino</option>
                                         </select>
                                         <label for="">NIT</label>
-                                        <input type="text" id="nitActualizar" name="nit">
+                                        <input type="text" id="nitActualizar" name="nit" autocomplete="off">
                                         <label for="">DIRECCION</label>
-                                        <input type="text" id="direccionActualizar" name="direccion">
+                                        <input type="text" id="direccionActualizar" name="direccion" autocomplete="off">
                                         <label for="">TELEFONO</label>
-                                        <input type="text" id="telefonoActualizar" name="telefono">
+                                        <input type="text" id="telefonoActualizar" name="telefono" autocomplete="off">
                                         <label for="">EMAIL</label>
-                                        <input type="text" id="emailActualizar" name="email">
+                                        <input type="text" id="emailActualizar" name="email" autocomplete="off">
                                         <!--Pie de modal-->
                                         <button type="submit" class="btn btn-success">Agregar personal</button>
                                         <div class="modal-footer">
@@ -263,9 +266,9 @@
                                         
                                         <h2>Agregar Cliente</h2>
                                             <label for="">NOMBRE</label>
-                                            <input type="text" id="nombreCrear" name="nombre">
+                                            <input type="text" id="nombreCrear" name="nombre" autocomplete="off">
                                             <label for="">APELLIDO</label>
-                                            <input type="text" id="apellidoCrear" name="apellido">
+                                            <input type="text" id="apellidoCrear" name="apellido" autocomplete="off">
                                             <label for="">GENERO</label>
                                             <select name="genero" id="generoCrear">
                                             <option value="">Seleccione un genero</option>
@@ -273,13 +276,13 @@
                                                 <option value="Femenino">Femenino</option>
                                             </select>
                                             <label for="">NIT</label>
-                                            <input type="text" id="nitCrear" name="nit">
+                                            <input type="text" id="nitCrear" name="nit" autocomplete="off">
                                             <label for="">DIRECCION</label>
-                                            <input type="text" id="direccionCrear" name="direccion">
+                                            <input type="text" id="direccionCrear" name="direccion" autocomplete="off">
                                             <label for="">TELEFONO</label>
-                                            <input type="text" id="telefonoCrear" name="telefono">
+                                            <input type="text" id="telefonoCrear" name="telefono" autocomplete="off">
                                             <label for="">EMAIL</label>
-                                            <input type="text" id="emailCrear" name="email">
+                                            <input type="text" id="emailCrear" name="email" autocomplete="off">
                 
                         
                                             <button type="submit " class="btn btn-success">Agregar cliente</button>
@@ -303,5 +306,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL') ?>views/js/clienteApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/estilosGenerales.css">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/background.css">
     <link rel="stylesheet" href="<?php echo constant('URL') ?>views/css/navBar.css">
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shortcut icon" href="/views/img/icon.png" type="image/x-icon">
 </head>
@@ -122,18 +123,20 @@
 
 
         <div class="container mt-5">
-            <h1>Personal</h1>
-            <div class="container">
-                <div class="input-group mb-3">
-                    <h2>Buscar:</h2>
-                    <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="container sticky-section">
+                <h1>Personal</h1>
+                    <div class="container">
+                        <div class="input-group mb-3">
+                            <h2>Buscar:</h2>
+                            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                <div class="container">
+                <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#agregarPersonal">
+                    Nuevo personal
+                </button>
                 </div>
-            </div>
-            <div class="container">
-            <!-- Botón para abrir el modal -->
-            <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#agregarPersonal">
-                Nuevo personal
-            </button>
             </div>
         <div class="container">
             <h2>Lista de personal</h2>
@@ -317,5 +320,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="<?php echo constant('URL') ?>views/js/personalApp.js"></script>
+    <script src="<?php echo constant('URL') ?>views/js/table.js"></script>
 </body>
 </html>

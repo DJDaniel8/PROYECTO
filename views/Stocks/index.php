@@ -119,37 +119,145 @@
         <!--FIN DE NAVBAR-->
 
 <div class="container">
-    <h1>Stock</h1>
-    <div class="container">
-        <div class="input-group mb-3">
-            <h2>Buscar:</h2>
-            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-    </div>
-    <table class="table table-hover table-bordered">
-            <th>ID</th>
-            <th>STOCK</th>
-            <th>PRECIO COMPRA</th>
-            <th>PRECIO VENTA SUGERIDO</th>
-            <th>PRECIO MINIMO</th>
-            <th>PRODUCTO ID</th>
-            <th>OPCIONES</th>
+    <div class="container sticky-section">
+        <h1>Stock</h1>
 
-            <tr>
-                <td>1</td>
-                <td>50</td>
-                <td>Q 5.00</td>
-                <td>Q 10.00</td>
-                <td>Q 9.00</td>
-                <td>54</td>
-                <td>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                        Actualizar
-                    </button>
-                </td>
-            </tr>
-      </table>
+        <div class="container">
+            <div class="input-group mb-3">
+                <h2>Buscar:</h2>
+                <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="table table-hover table-bordered">
+                    <th>STOCK</th>
+                    <th>PRECIO COMPRA</th>
+                    <th>PRECIO VENTA SUGERIDO</th>
+                    <th>PRECIO MINIMO</th>
+                    <th>PRODUCTO ID</th>
+                    <th>OPCIONES</th>
+
+                    <tr>
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <td>50</td>
+                        <td>Q 5.00</td>
+                        <td>Q 10.00</td>
+                        <td>Q 9.00</td>
+                        <td>54</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+                                Actualizar
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
       <div class="container mt-5">
+       
         <!-- Botón para abrir el modal -->
 
 
@@ -167,8 +275,6 @@
                         <div class="modal-body">
                             <div class=" formulario">
                                 <h2>Actualizar Stock</h2>
-                                    <label for="">STOCK ID</label>
-                                    <input type="text" readonly>
                                     <label for="">PRECIO COMPRA</label>
                                     <input type="text" id="precioCompra">
                                     <label for="">PRECIO VENTA SUGERIDO</label>

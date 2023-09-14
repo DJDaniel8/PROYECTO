@@ -118,13 +118,8 @@
         </nav>
         <!--FIN DE NAVBAR-->
 
-
-
-
-
-
-
 <div class="container">
+    <div class="container sticky-section">
     <h1>Ingresos</h1>
     <div class="container">
         <div class="input-group mb-3">
@@ -138,10 +133,11 @@
             Nuevo ingreso
         </button>
         </div>
-
+</div>
     <div class="row">
         <div class="col-md-6">
             <h2>Historial de ventas</h2>
+            <div class="table-container">
                 <!-- Contenido de la primera tabla -->
                 <table class="table table-hover table-bordered">
                     <th>FECHA</th>
@@ -154,11 +150,52 @@
                         <td>Walmart</td>
                         <td>Q 1,000</td>
                     </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>21/8/2023</td>
+                        <td>Walmart</td>
+                        <td>Q 1,000</td>
+                    </tr>
               </table>
-      
+            </div>
         </div>
         <div class="col-md-6">
             <h2>Detalles ventas</h2>
+            <div class="table-container">
                 <table class="table table-hover table-bordered">
                     <th>CODIGO</th>
                     <th>NOMBRE</th>
@@ -173,8 +210,86 @@
                         <td>Q10</td>
              
                     </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Tenis</td>
+                        <td>3</td>
+                        <td>Q10</td>
+             
+                    </tr>
             
             </table>
+            </div>
         </div>
     </div>
 </div>
