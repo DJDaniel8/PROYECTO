@@ -125,18 +125,16 @@
     <div class="d-flex flex-row align-items-center ">
         <div class="form-group mr-2">
             <label for="proveedoresSelect">Proveedor</label>
-            <select id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
-                <option value="a">a</option>
-                <option value="b">b</option>
-                <option value="c">c</option>
-                <option value="d">d</option>
-                <option value="e">e</option>
-                <option value="f">f</option>
-                <option value="g">g</option>
-                <option value="h">h</option>
+            <select name="proveedorId" id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
+                <option value="0">Seleccione Un proveedor</option>
+                <?php
+                foreach ($this->proveedores as $row){?> 
+                <option value="<?php echo $row->id; ?>"> <?php echo$row->razonSocial ; ?></option>
+                <?php } ?>
+
             </select>
         </div>
-        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal" id="btnAgregarProducto">
             Agregar producto
         </button>
     </div>
@@ -147,33 +145,27 @@
     <div class="container">
         <!--AQUI AGREGUE EL DIV PARA EL CONTENIDO DE LA TABLA-->
         <div class="table-container">
-        <table class="table table-hover table-bordered">
-            <th>CODIGO</th>
-            <th>NOMBRE</th>
-            <th>CANTIDAD</th>
-            <th>PRECIO COMPRA</th>
-            <th>PRECIO MINIMO VENTA</th>
-            <th>PRECIO VENTA</th>
-            <th>    <!-- Botón para abrir el modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+        <table class="table table-hover table-bordered" id="tablaProductos">
+            <thead>
+                <th>CODIGO</th>
+                <th>NOMBRE</th>
+                <th>CANTIDAD</th>
+                <th>PRECIO COMPRA</th>
+                <th>PRECIO MINIMO VENTA</th>
+                <th>PRECIO VENTA</th>
+                <th>    <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar" id="btnFinalizar">
                     Finalizar
                 </button></th>
-            <tr>
-            <td>1</td>
-            <td>Daniel</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-           
-           
-            </tr>
+            </thead>
+            <tbody id="bodyTablaProductos">
+            </tbody>
         </table>
         </div>
     </div>
 </div>
 
-<form method="post" id="ingresos">
+<form method="post" id="agregarProductosModal">
       <!-- Modal -->
       <div class="modal" id="miModal">
         <div class="modal-dialog">
@@ -188,12 +180,7 @@
                     <div class=" formulario">
                         <form action="">
                             <label for="">PRODUCTO</label>
-                            <select name="" id="producto">
-                                <option value="">Seleccionar producto</option>
-                                <option value="Piti">Piti tanga</option>
-                                <option value="Calzon">Calzon</option>
-                                <option value="Nya">Nya</option>
-
+                            <select name="producto" id="selectProducto">
                             </select>
                             <button type="submit" class="btn btn-success" >Enviar</button>
                         </form>
@@ -213,6 +200,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../js/ingresosApp.js"></script>
+<script src="<?php echo constant('URL') ?>views/js/ingresosApp.js"></script>
 </body>
 </html>
