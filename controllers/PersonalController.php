@@ -75,6 +75,7 @@ class PersonalController extends ControllerBase{
             $res = $this->model->insert($personal,$contrasena);
             $personal->id = $this->model->getLastId();
             
+
             
             if($res){
                 $mensaje = "Personal Insertado con Exito";

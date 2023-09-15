@@ -3,15 +3,12 @@ var idActualizar;
 var codigoActualizar;
 var nombreActualizar;
 var descripcionActualizar;
-var proveedorActualizar;
 
 document.getElementById("crearProducto").addEventListener("submit", function(event) {
     event.preventDefault(); // Detener la recarga automática de la página
     var codigo = document.getElementById("codigoCrear");
     var nombre = document.getElementById("nombreCrear");
     var descripcion = document.getElementById("descripcionCrear");
-    var proveedor =document.getElementById("proveedoresSelect");
-
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
     const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
@@ -34,13 +31,6 @@ document.getElementById("crearProducto").addEventListener("submit", function(eve
         resultado = false;
     } else {
         mensajes.push('Estructura de descripción válida ✔️');
-    }
-    if(proveedor.value === " "){
-
-        mensajes.push('Seleccione un proveedor ❌');
-        resultado = false;
-    } else {
-        mensajes.push('proveedor seleccionado ✔️');
     }
     // Crear una lista de mensajes
     var listaMensajes = '<ul style="text-align: left;">';
@@ -134,7 +124,7 @@ function enviarFormulario() {
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.codigo, data.Valor.nombre, data.Valor.descripcion,data.valor.proveedor);
+      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.codigo, data.Valor.nombre, data.Valor.descripcion);
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
@@ -152,7 +142,7 @@ function mostrarNotificacion(titulo, cuerpo, icono, boton){
 }
 
 
-function AgregarFila(id, codigo, nombre, descripcion, proveedor){
+function AgregarFila(id, codigo, nombre, descripcion){
     var nuevoTr = document.createElement('tr');
     nuevoTr.setAttribute('model-target', id);
 
@@ -164,10 +154,6 @@ function AgregarFila(id, codigo, nombre, descripcion, proveedor){
 
     var nuevaCeldaDescripcion = document.createElement('td');
     nuevaCeldaDescripcion.textContent = descripcion;
-
-    var nuevaCeldaProveedor = document.createElement('td');
-    nuevaCeldaProveedor.textContent = proveedor;
-
 
     var boton = document.createElement("button");
     boton.type = "button";
@@ -194,7 +180,6 @@ function AgregarFila(id, codigo, nombre, descripcion, proveedor){
     nuevoTr.appendChild(nuevaCeldaCodigo);
     nuevoTr.appendChild(nuevaCeldaNombre);
     nuevoTr.appendChild(nuevaCeldaDescripcion);
-    nuevoTr.appendChild(nuevaCeldaProveedor);
     nuevoTr.appendChild(td);
 
     var cuerpoTabla = document.getElementById("CuerpoTabla")
@@ -202,12 +187,11 @@ function AgregarFila(id, codigo, nombre, descripcion, proveedor){
 }
 
 
-function Actualizar(id, codigo, nombre, descripcion, proveedor){
+function Actualizar(id, codigo, nombre, descripcion){
     idActualizar = id;
     codigoActualizar = codigo;
     nombreActualizar = nombre;
     descripcionActualizar = descripcion;
-    proveedorActualizar = proveedor;
 }
 
 
@@ -259,7 +243,7 @@ function EliminarFila(id){
 
 
 
-function actualizarProducto(id, codigo, nombre, descripcion, proveedor){
+function actualizarProducto(id, codigo, nombre, descripcion){
     Swal.fire({
         title: '¿Estás seguro?',
         text: '¿Deseas Actualizar este Personal?',
@@ -274,8 +258,6 @@ function actualizarProducto(id, codigo, nombre, descripcion, proveedor){
             formulario.append('codigo', codigo);
             formulario.append('nombre', nombre);
             formulario.append('descripcion', descripcion);
-            formulario.append('proveedor', proveedor);
-            
             fetch(url+"Productos/Actualizar", {
             method: "POST",
             body: formulario,
@@ -290,7 +272,7 @@ function actualizarProducto(id, codigo, nombre, descripcion, proveedor){
             .then(data => {
                 console.log(data);
                 mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-                if(data.Respuesta) actualizarFila(id, codigo, nombre, descripcion,proveedor);
+                if(data.Respuesta) actualizarFila(id, codigo, nombre, descripcion);
             })
             .catch(error => {
                 console.error( error);
@@ -300,12 +282,11 @@ function actualizarProducto(id, codigo, nombre, descripcion, proveedor){
     });
 }
 
-function actualizarFila(id, codigo, nombre, descripcion,proveedor){
+function actualizarFila(id, codigo, nombre, descripcion){
     var fila = document.querySelector('tr[model-target="'+id+'"]');
     fila.cells[0].textContent = codigo;
     fila.cells[1].textContent = nombre;
     fila.cells[2].textContent = descripcion;
-    fila.cells[2].textContent = proveedor;
     var nombreRol;
 
     var boton = fila.querySelector('button[data-toggle]');
@@ -324,7 +305,6 @@ function LimpiarActualizar()
     document.getElementById("codigoActualizar").value = "";
     document.getElementById("nombreActualizar").value ="";
     document.getElementById("descripcionActualizar").value ="";
-    document.getElementById("proveedoresSelect").value ="";
 }
 
 function LimpiarCrear()
@@ -332,7 +312,6 @@ function LimpiarCrear()
     document.getElementById("codigoCrear").value = "";
     document.getElementById("nombreCrear").value ="";
     document.getElementById("descripcionCrear").value ="";
-    document.getElementById("proveedoresSelect").value ="";
 }
 
 function LimpiarEliminar()
