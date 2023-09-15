@@ -1,14 +1,14 @@
 <?php
 
-require_once 'models/Ingreso.php';
 require_once 'views/Ingresos/IngresosView.php';
+require_once 'models/Ingreso.php';
 
 class IngresosController extends ControllerBase{
 
 
     function __construct()
     {
-        $this->view = new IngresosView();
+        parent::__construct(new IngresosView());
         $this->isPublic = false;
     }
 

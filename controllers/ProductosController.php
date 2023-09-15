@@ -1,5 +1,6 @@
 <?php
 
+require_once 'views/Productos/ProductosView.php';
 require_once 'models/Producto.php';
 
 class ProductosController extends ControllerBase{
@@ -7,12 +8,13 @@ class ProductosController extends ControllerBase{
 
     function __construct()
     {
-        parent::__construct();
+        parent::__construct(new ProductosView());
         $this->isPublic = false;
     }
 
     function loadModel($model){
         parent::loadModel($model);
+        $this->view->proveedores = $this->cargarProveedores();
         $this->Listar();
     }
 
@@ -144,6 +146,16 @@ class ProductosController extends ControllerBase{
         header('Content-Type: application/json');
         echo json_encode($respuesta);
     
+    }
+
+    function cargarProveedores(){
+        $res = $this->model->getProvedores();
+        if(isset($res)){
+            return $res;
+        }
+        else{
+            return array('No definido');
+        }
     }
 }
 
