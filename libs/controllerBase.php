@@ -7,7 +7,7 @@ class ControllerBase {
 
     function __construct($view = new ViewBase)
     {
-        $this->view = $view();
+        $this->view = $view;
     }
 
     function loadModel($model){
