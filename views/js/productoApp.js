@@ -9,6 +9,8 @@ document.getElementById("crearProducto").addEventListener("submit", function(eve
     var codigo = document.getElementById("codigoCrear");
     var nombre = document.getElementById("nombreCrear");
     var descripcion = document.getElementById("descripcionCrear");
+    var proveedor =document.getElementById("proveedoresSelect");
+
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
     const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
@@ -31,6 +33,13 @@ document.getElementById("crearProducto").addEventListener("submit", function(eve
         resultado = false;
     } else {
         mensajes.push('Estructura de descripción válida ✔️');
+    }
+    if(proveedor.value === " "){
+
+        mensajes.push('Seleccione un proveedor ❌');
+        resultado = false;
+    } else {
+        mensajes.push('proveedor seleccionado ✔️');
     }
     // Crear una lista de mensajes
     var listaMensajes = '<ul style="text-align: left;">';
@@ -118,7 +127,7 @@ function enviarFormulario() {
       if (response.ok) { 
         return response.json();
       } else {
-        throw new Error("Error en la respuesta del servidor: ${response.status} ${response.statusText}");
+        throw new Error('Error en la respuesta del servidor: ${response.status} ${response.statusText}');
       }
     })
     .then(data => {

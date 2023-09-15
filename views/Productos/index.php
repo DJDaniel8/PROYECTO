@@ -231,7 +231,14 @@
                                             <input type="text" id="nombreCrear" name="nombre">
                                             <label for="">Descripcion</label>
                                             <input type="text" id="descripcionCrear" name="descripcion">
-                                            <button type="submit" class="btn btn-success" >Agregar producto</button>
+                                            <select name="proveedorId" id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
+                                            <?php
+                                                foreach ($this->proveedores as $row){?> 
+                                                <option value="<?php echo $row->id; ?>"> <?php echo$row->razonSocial ; ?></option>
+                                                <?php } ?>
+
+                                            </select>
+                                                <button type="submit" class="btn btn-success" >Agregar producto</button>
                                         </div>
                                     
                                 </div>
