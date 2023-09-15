@@ -63,6 +63,7 @@ class ProductosController extends ControllerBase{
             $producto->codigo = $_POST['codigo'];
             $producto->nombre = $_POST['nombre'];
             $producto->descripcion = $_POST['descripcion'];
+            $producto->proveedor->id = intval($_POST['proveedorId']);
 
             $res = $this->model->insert($producto);
             $producto->id = $this->model->getLastId();
