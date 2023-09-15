@@ -67,7 +67,7 @@ class PersonalController extends ControllerBase{
             $personal->direccion = $_POST['direccion'];
             $personal->telefono = $_POST['telefono'];
             $personal->email = $_POST['email'];
-            $personal->sueldo = $_POST['sueldo'];
+            $personal->sueldo = floatval($_POST['sueldo']);
             $personal->rol = new Rol();
             $personal->rol->id = intval($_POST['rol']);
             $contrasena=$_POST['password'];

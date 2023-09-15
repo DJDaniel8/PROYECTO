@@ -164,6 +164,10 @@ class IngresosController extends ControllerBase{
         echo json_encode($respuesta);
     
     }
+
+    function nuevoIngreso(){
+        $this->view->render('Ingresos/nuevoIngreso');
+    }
 }
 
 ?>

@@ -129,9 +129,9 @@
         </div>-->
     </div>
     <div class="container">
-        <!-- Botón para abrir el modal -->
+        
         <button type="button" class="btn btn-success botonModal">
-            <a href="<?php echo constant('URL') ?>views/Ingresos/nuevoIngreso.php" style="color:aliceblue">Ingreso</a>
+            <a href="<?php echo constant('URL') ?>Ingresos/nuevoIngreso" style="color:aliceblue">Ingreso</a>
         </button>
         </div>
 
