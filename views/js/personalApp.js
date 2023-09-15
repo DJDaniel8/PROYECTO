@@ -125,6 +125,13 @@ document.getElementById("crearPersonal").addEventListener("submit", function(eve
 });
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
 document.getElementById("actualizarPersonal").addEventListener("submit", function(event) {
     event.preventDefault(); // Detener la recarga automática de la página
     var nombreActualizar = document.getElementById("nombreActualizar");
@@ -212,6 +219,7 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
     
     if(resultado){
         actualizarPersonal(actulizarId,
+<<<<<<< HEAD
             actualizarNombre.value,
             actualizarApellido.value,
             actualizarGenero.value,
@@ -222,6 +230,18 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
             actualizarEmail.value,
             actualizarSueldo.value,
             actualizarRol.value);
+=======
+            nombreActualizar.value,
+            apellidoActualizar.value,
+            generoActualizar.value,
+            puestoActualizar.value,
+            usuarioActualizar.value,
+            direccionActualizar.value,
+            telefonoActualizar.value,
+            emailActualizar.value,
+            sueldoActualizar.value,
+            rolAgctualizar.value);
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     }
     else{
         Swal.fire({
@@ -241,7 +261,12 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
 function enviarFormulario() {
     const formulario = document.getElementById("crearPersonal");
     const formData = new FormData(formulario);
+<<<<<<< HEAD
     console.log(formData);
+=======
+    
+    console.log(formData.get("rol"));
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     fetch(url+"Personal/Crear", {
       method: "POST",
       body: formData,
@@ -256,14 +281,24 @@ function enviarFormulario() {
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
+<<<<<<< HEAD
       if(data.Respuesta) AgregarFila(data.valor.id,data.valor.nombre, data.valor.apellido,data.valor.genero,
         data.valor.puesto, data.valor.usuario, data.valor.direccion, data.valor.telefono, 
         data.valor.email, data.valor.sueldo, data.valor.rol
+=======
+      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.nombre, data.Valor.apellido,data.Valor.sexo,
+        data.Valor.puesto, data.Valor.usuario, data.Valor.direccion, data.Valor.telefono, 
+        data.Valor.email, data.Valor.sueldo, data.Valor.rol
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
         );
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
+<<<<<<< HEAD
       alert("Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.");
+=======
+      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde." + error);
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     });
 }
 
@@ -312,7 +347,15 @@ function AgregarFila(id, nombre, apellido, genero, puesto, usuario, direccion, t
     nuevaCeldaSueldo.textContent = sueldo;
 
     var nuevaCeldaRol = document.createElement('td');
+<<<<<<< HEAD
     nuevaCeldaRol.textContent = rol;
+=======
+    var rolnombre;
+    if(rol.id == 1) rolnombre = "Administrador";
+    else if(rol.id == 2) rolnombre = "Vendedor";
+    else if(rol.id == 3) rolnombre = "Bodeguero";
+    nuevaCeldaRol.textContent = rolnombre;
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
 
 
     var boton = document.createElement("button");
@@ -473,7 +516,15 @@ function actualizarFila(id, nombre, apellido, genero, puesto, usuario, direccion
     fila.cells[6].textContent = telefono;
     fila.cells[7].textContent = email;
     fila.cells[8].textContent = sueldo;
+<<<<<<< HEAD
     fila.cells[9].textContent = rol;
+=======
+    var nombreRol;
+    if(rol == 1) nombreRol = "Administrador";
+    else if(rol == 2) nombreRol = "Vendedor";
+    else if(rol == 3) nombreRol = "Bodeguero";
+    fila.cells[9].textContent = nombreRol;
+>>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     var boton = fila.querySelector('button[data-toggle]');
     if (boton) {
         boton.onclick = function() {
