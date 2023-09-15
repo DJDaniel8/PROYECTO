@@ -145,6 +145,7 @@
                 <th>CODIGO</th>
                 <th>NOMBRE</th>
                 <th>DESCRIPCION</th>
+                <th>PROVEEDORES</th>
                 <th>OPCIONES</th>
                 </tr>
                 <?php   
@@ -154,12 +155,13 @@
                             echo "<td>{$row->codigo}</td>";
                             echo "<td>{$row->nombre}</td>";
                             echo "<td>{$row->descripcion}</td>";
+                            echo "<td>{$row->descripcion}</td>";
                             echo "<td>"; 
                             echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
                                     Eliminar
                                     </button>';
                             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
-                                '.$row->id.",'".$row->codigo."','".$row->nombre."','".$row->descripcion."')".'">Actualizar</button>';
+                                '.$row->id.",'".$row->codigo."','".$row->nombre."','".$row->descripcion."','".$row->descripcion."')".'">Actualizar</button>';
                             echo "</td>";
                             echo "</tr>";
 
@@ -231,7 +233,14 @@
                                             <input type="text" id="nombreCrear" name="nombre">
                                             <label for="">Descripcion</label>
                                             <input type="text" id="descripcionCrear" name="descripcion">
-                                            <button type="submit" class="btn btn-success" >Agregar producto</button>
+                                            <select id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
+                                            <?php
+                                                foreach ($this->proveedores as $row){?> 
+                                                <option value="<?php echo $row->id; ?>"> <?php echo$row->razonSocial ; ?></option>
+                                                <?php } ?>
+
+                                            </select>
+                                                <button type="submit" class="btn btn-success" >Agregar producto</button>
                                         </div>
                                     
                                 </div>
