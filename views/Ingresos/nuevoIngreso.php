@@ -126,14 +126,10 @@
         <div class="form-group mr-2">
             <label for="proveedoresSelect">Proveedor</label>
             <select id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
-                <option value="a">a</option>
-                <option value="b">b</option>
-                <option value="c">c</option>
-                <option value="d">d</option>
-                <option value="e">e</option>
-                <option value="f">f</option>
-                <option value="g">g</option>
-                <option value="h">h</option>
+            <?php
+                                foreach ($this->proveedores as $row){?> 
+                                    <option value="<?php echo $row->id; ?>"> <?php echo$row->razonSocial ; ?></option>
+                                <?php } ?>
             </select>
         </div>
         <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
