@@ -124,11 +124,7 @@ function enviarFormulario() {
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-<<<<<<< HEAD
-      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.codigo, data.Valor.nombre, data.Valor.descripcion,data.Valor.proveedor);
-=======
       if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.codigo, data.Valor.nombre, data.Valor.descripcion);
->>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
@@ -159,13 +155,6 @@ function AgregarFila(id, codigo, nombre, descripcion){
     var nuevaCeldaDescripcion = document.createElement('td');
     nuevaCeldaDescripcion.textContent = descripcion;
 
-<<<<<<< HEAD
-    var nuevaCeldaProveedor = document.createElement('td');
-    nuevaCeldaProveedor.textContent = proveedor.id;
-
-
-=======
->>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     var boton = document.createElement("button");
     boton.type = "button";
     boton.className = "btn btn-danger";

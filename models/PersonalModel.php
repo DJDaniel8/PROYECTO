@@ -11,17 +11,9 @@ class PersonalModel extends ModelBase {
     }
 
     public function insert(Personal $personal, $contrasena){
-<<<<<<< HEAD
-
         $query = "INSERT INTO [dbo].[Trabajadores] 
                     (nombre, apellido, sexo, puesto, usuario, contraseña, direccion, telefono, email, sueldo, rol) VALUES 
                     (:nombre,:apellido,:sexo,:puesto,:usuario,'{$contrasena}',:direccion,:telefono,:email,:sueldo,:rol)";
-
-=======
-        $query = "INSERT INTO [dbo].[Trabajadores] 
-                    (nombre, apellido, sexo, puesto, usuario, contraseña, direccion, telefono, email, sueldo, rol) VALUES 
-                    (:nombre,:apellido,:sexo,:puesto,:usuario,'{$contrasena}',:direccion,:telefono,:email,:sueldo,:rol)";
->>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
         $resultadoQuery->bindParam(':nombre', $personal->nombre, PDO::PARAM_STR);
@@ -46,11 +38,8 @@ class PersonalModel extends ModelBase {
         else{
             return false;
         }
-<<<<<<< HEAD
-=======
         
         
->>>>>>> b42403b5d0d1f38f4f4e2ef11bcf5ddca4ab7bfc
     }
 
     public function read(){
