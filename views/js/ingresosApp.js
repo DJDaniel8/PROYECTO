@@ -13,14 +13,28 @@ document.getElementById("agregarProductosModal").addEventListener("submit", func
 
 document.getElementById("btnFinalizar").addEventListener("click", function(){
     var stocks = obtenerDatos();
+    enviarFormulario(stocks);
 })
+
+function mostrarNotificacion(titulo, cuerpo, icono, boton){
+    Swal.fire({
+        title: titulo,
+        html: cuerpo,
+        icon: icono,
+        confirmButtonText: boton
+    });
+}
 
 function enviarFormulario(stocks) {
     const formData = new FormData();
-    formData.append("stocks",stocks)
-    const nombreCategoria = formData.get("nombreCategoria");
+    console.log("---");
+    console.log(stocks);
+    console.log("---");
+    stocksJSON = JSON.stringify(stocks);
+    formData.append("stocks",stocksJSON)
+    formData.append("proveedorId", proveedorId);
   
-    fetch(url+"Categorias/Crear", {
+    fetch(url+"Ingresos/Crear", {
       method: "POST",
       body: formData,
     })
@@ -28,13 +42,12 @@ function enviarFormulario(stocks) {
       if (response.ok) { 
         return response.json();
       } else {
-        throw new Error('Error en la respuesta del servidor: ${response.status} ${response.statusText}');
+        throw new Error('${response.status} ${response.statusText}');
       }
     })
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-      if(data.Respuesta) AgregarFila(data.Valor, nombreCategoria);
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
@@ -145,7 +158,7 @@ function agregarProductoTabla(id, nombre, codigo){
 function obtenerDatos(){
     const tbody = document.getElementById("bodyTablaProductos");
     const filas = tbody.getElementsByTagName("tr");
-    var stocks = [];
+    var stocks = new Array();
 
     for (let i = 0; i < filas.length; i++) {
         var stock = {

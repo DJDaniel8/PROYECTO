@@ -2,9 +2,11 @@
 
 require_once 'views/Ingresos/IngresosView.php';
 require_once 'models/Ingreso.php';
+require_once 'models/Stock.php';
 
 class IngresosController extends ControllerBase{
 
+    public $trabajadorId;
 
     function __construct()
     {
@@ -35,7 +37,7 @@ class IngresosController extends ControllerBase{
     function validarAcceso(){
         session_name("LOGIN");
         session_start();
-        $trabajadorId = $_SESSION['TrabajadorId'];
+        $this->trabajadorId = intval($_SESSION['TrabajadorId']);
         $rol = $_SESSION['Rol'];
 
         
@@ -62,35 +64,47 @@ class IngresosController extends ControllerBase{
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $ingreso = new Ingreso();
             $ingreso->fecha = date('d/m/Y');
-            $ingreso->personal->id = $_POST['personalId'];
-            $ingreso->proveedor = $_POST['proveedorId'];
+            session_name("LOGIN");
+            session_start();
+            $ingreso->personal->id = intval($_SESSION['TrabajadorId']);
+            $ingreso->proveedor->id = $_POST['proveedorId'];
 
-            $productosJSON = $_POST['productos'];
-            $productos = json_decode($productosJSON);
+            $productosJSON = $_POST['stocks'];
 
-            if($productos){
-
-            }
-            else{
-                $mensaje .= "No pude acceder al Objeto JSON";
-            }
-
+            $productos = json_decode($productosJSON, true);
+            /*
             $res = $this->model->insert($ingreso);
             $id = $this->model->getLastId();
             
             if($res){
                 $mensaje .= "Producto Insertado con Exito";
+                if(isset($productos)){
+                    foreach($productos as $producto){
+                        $stock = new Stock();
+                        $stock->producto->id = intval($producto['id']);
+                        $stock->stock = intval($producto['cantidad']);
+                        $stock->precioCompra = floatval($producto['precioCompra']);
+                        $stock->precioVentaMinimo = floatval($producto['precioVentaMinimo']);
+                        $stock->precioVenta = floatval($producto['precioVenta']);
+                        $stockId = $this->model->insertIntoStocks($stock);
+                        $this->model->insertIntoProductosIngresos($id, $stock->producto->id, $stock->stock, $stock->precioCompra, $stockId);
+                    }
+                }
+                else{
+                    $mensaje .= "No pude acceder al Objeto JSON";
+                }
             }
             else{
                 $mensaje .= "Hubo un erro al insertar el producto";
             }
+            */
         }
         
-
+        
         $respuesta = array(
-            'Respuesta' => $res,
-            'Mensaje' => $mensaje,
-            'Valor' => $ingreso
+            'Respuesta' => true,
+            'Mensaje' => "este es el mensaje",
+            'Valor' => $productosJSON
         );
 
         header('Content-Type: application/json');
@@ -147,7 +161,7 @@ class IngresosController extends ControllerBase{
             $res = $this->model->getProductosByProveedorId($id);
             
             if(isset($res)){
-                $mensaje = "Ingreso Eliminado con Exito";
+                $mensaje = "Productos devueltos con exito";
             }
             else{
                 $mensaje = "Hubo un error al Eliminar el Ingreso";
