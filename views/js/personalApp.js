@@ -109,6 +109,12 @@ document.getElementById("crearPersonal").addEventListener("submit", function(eve
         listaMensajes += '<li>' + mensaje + '</li>';
     });
     listaMensajes += '</ul>';
+<<<<<<< HEAD
+
+    
+    if(resultado){
+        enviarFormulario();
+=======
 
     
     if(resultado){
@@ -126,9 +132,37 @@ document.getElementById("crearPersonal").addEventListener("submit", function(eve
 
 
 
+document.getElementById("eliminarPersonal").addEventListener("submit", function(event) {
+    event.preventDefault(); // Detener la recarga automática de la página
+    var nombreEliminar = document.getElementById("nombreEliminar");
+    var mensajes = []; // Usamos un array para almacenar los mensajes
+    var resultado = true;
+    const regexNombre = /^[a-zA-Z]+$/;
+    if(regexNombre.test(nombreEliminar.value)){
+        mensajes.push('Buena estructura del nombre ✔️');
+    }else{
+        mensajes.push('Agregue un nombre o verifique su estructura ❌');
+        resultado = false;
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
+    }
+    else{
+    Swal.fire({
+        title: 'Validación de Datos',
+        html: listaMensajes,
+        icon: resultado ? 'success' : 'error',
+        confirmButtonText: 'Ok'
+    });
+    }
+});
+
+
+<<<<<<< HEAD
 
 
 
+
+=======
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
 document.getElementById("actualizarPersonal").addEventListener("submit", function(event) {
     event.preventDefault(); // Detener la recarga automática de la página
     var nombreActualizar = document.getElementById("nombreActualizar");
@@ -216,6 +250,7 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
     
     if(resultado){
         actualizarPersonal(actulizarId,
+<<<<<<< HEAD
             nombreActualizar.value,
             apellidoActualizar.value,
             generoActualizar.value,
@@ -226,6 +261,18 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
             emailActualizar.value,
             sueldoActualizar.value,
             rolAgctualizar.value);
+=======
+            actualizarNombre.value,
+            actualizarApellido.value,
+            actualizarGenero.value,
+            actualizarPuesto.value,
+            actualizarUsuario.value,
+            actualizarDireccion.value,
+            actualizarTelefono.value,
+            actualizarEmail.value,
+            actualizarSueldo.value,
+            actualizarRol.value);
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
     }
     else{
         Swal.fire({
@@ -245,8 +292,12 @@ document.getElementById("actualizarPersonal").addEventListener("submit", functio
 function enviarFormulario() {
     const formulario = document.getElementById("crearPersonal");
     const formData = new FormData(formulario);
+<<<<<<< HEAD
     
     console.log(formData.get("rol"));
+=======
+    console.log(formData);
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
     fetch(url+"Personal/Crear", {
       method: "POST",
       body: formData,
@@ -261,14 +312,24 @@ function enviarFormulario() {
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
+<<<<<<< HEAD
       if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.nombre, data.Valor.apellido,data.Valor.sexo,
         data.Valor.puesto, data.Valor.usuario, data.Valor.direccion, data.Valor.telefono, 
         data.Valor.email, data.Valor.sueldo, data.Valor.rol
+=======
+      if(data.Respuesta) AgregarFila(data.valor.id,data.valor.nombre, data.valor.apellido,data.valor.genero,
+        data.valor.puesto, data.valor.usuario, data.valor.direccion, data.valor.telefono, 
+        data.valor.email, data.valor.sueldo, data.valor.rol
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
         );
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
+<<<<<<< HEAD
       alert("Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde." + error);
+=======
+      alert("Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.");
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
     });
 }
 
@@ -317,11 +378,15 @@ function AgregarFila(id, nombre, apellido, genero, puesto, usuario, direccion, t
     nuevaCeldaSueldo.textContent = sueldo;
 
     var nuevaCeldaRol = document.createElement('td');
+<<<<<<< HEAD
     var rolnombre;
     if(rol.id == 1) rolnombre = "Administrador";
     else if(rol.id == 2) rolnombre = "Vendedor";
     else if(rol.id == 3) rolnombre = "Bodeguero";
     nuevaCeldaRol.textContent = rolnombre;
+=======
+    nuevaCeldaRol.textContent = rol;
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
 
 
     var boton = document.createElement("button");
@@ -482,11 +547,15 @@ function actualizarFila(id, nombre, apellido, genero, puesto, usuario, direccion
     fila.cells[6].textContent = telefono;
     fila.cells[7].textContent = email;
     fila.cells[8].textContent = sueldo;
+<<<<<<< HEAD
     var nombreRol;
     if(rol == 1) nombreRol = "Administrador";
     else if(rol == 2) nombreRol = "Vendedor";
     else if(rol == 3) nombreRol = "Bodeguero";
     fila.cells[9].textContent = nombreRol;
+=======
+    fila.cells[9].textContent = rol;
+>>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
     var boton = fila.querySelector('button[data-toggle]');
     if (boton) {
         boton.onclick = function() {

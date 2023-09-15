@@ -145,7 +145,10 @@
                 <th>CODIGO</th>
                 <th>NOMBRE</th>
                 <th>DESCRIPCION</th>
+<<<<<<< HEAD
                 <th>PROVEEDORES</th>
+=======
+>>>>>>> 8145f10d09b00bee070fd0bfd26c9bbd0b58b963
                 <th>OPCIONES</th>
                 </tr>
                 <?php   
@@ -155,13 +158,20 @@
                             echo "<td>{$row->codigo}</td>";
                             echo "<td>{$row->nombre}</td>";
                             echo "<td>{$row->descripcion}</td>";
+<<<<<<< HEAD
                             echo "<td>{$row->descripcion}</td>";
+=======
+>>>>>>> 8145f10d09b00bee070fd0bfd26c9bbd0b58b963
                             echo "<td>"; 
                             echo '<button type="button" class="btn btn-danger" onclick="Eliminar('.$row->id.')">
                                     Eliminar
                                     </button>';
                             echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar(
+<<<<<<< HEAD
                                 '.$row->id.",'".$row->codigo."','".$row->nombre."','".$row->descripcion."','".$row->descripcion."')".'">Actualizar</button>';
+=======
+                                '.$row->id.",'".$row->codigo."','".$row->nombre."','".$row->descripcion."')".'">Actualizar</button>';
+>>>>>>> 8145f10d09b00bee070fd0bfd26c9bbd0b58b963
                             echo "</td>";
                             echo "</tr>";
 
