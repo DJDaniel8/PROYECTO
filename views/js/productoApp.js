@@ -128,13 +128,13 @@ function enviarFormulario() {
       if (response.ok) { 
         return response.json();
       } else {
-        throw new Error('Error en la respuesta del servidor: ${response.status} ${response.statusText}');
+        throw new Error("Error en la respuesta del servidor: ${response.status} ${response.statusText}");
       }
     })
     .then(data => {
       console.log(data);
       mostrarNotificacion("Respuesta", data.Mensaje, data.Respuesta ? 'success' : 'error', 'OK');
-      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.codigo, data.Valor.nombre, data.Valor.descripcion,data.valor.proveedor);
+      if(data.Respuesta) AgregarFila(data.Valor.id,data.Valor.codigo, data.Valor.nombre, data.Valor.descripcion,data.Valor.proveedor);
     })
     .catch(error => {
       console.error("Error al enviar el formulario:", error);
@@ -166,7 +166,7 @@ function AgregarFila(id, codigo, nombre, descripcion, proveedor){
     nuevaCeldaDescripcion.textContent = descripcion;
 
     var nuevaCeldaProveedor = document.createElement('td');
-    nuevaCeldaProveedor.textContent = proveedor;
+    nuevaCeldaProveedor.textContent = proveedor.id;
 
 
     var boton = document.createElement("button");
@@ -194,7 +194,6 @@ function AgregarFila(id, codigo, nombre, descripcion, proveedor){
     nuevoTr.appendChild(nuevaCeldaCodigo);
     nuevoTr.appendChild(nuevaCeldaNombre);
     nuevoTr.appendChild(nuevaCeldaDescripcion);
-    nuevoTr.appendChild(nuevaCeldaProveedor);
     nuevoTr.appendChild(td);
 
     var cuerpoTabla = document.getElementById("CuerpoTabla")

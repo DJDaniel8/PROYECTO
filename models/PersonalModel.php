@@ -11,25 +11,17 @@ class PersonalModel extends ModelBase {
     }
 
     public function insert(Personal $personal, $contrasena){
-<<<<<<< HEAD
+
         $query = "INSERT INTO [dbo].[Trabajadores] 
                     (nombre, apellido, sexo, puesto, usuario, contraseña, direccion, telefono, email, sueldo, rol) VALUES 
                     (:nombre,:apellido,:sexo,:puesto,:usuario,'{$contrasena}',:direccion,:telefono,:email,:sueldo,:rol)";
-=======
-<<<<<<< HEAD
-        $query = "EXEC insertarProducto @nombre = :nombre, @apellido = :apellido, @sexo = :sexo, @puesto = :puesto, @usuario = :usuario ,@contrasena = {$contrasena}, @direccion = :direccion, @telefono= :telefono, @email = :email, @sueldo = {$personal->sueldo}, @rol = {$personal->rol->id} ";
-=======
-        $query = "INSERT into Trabajadores (nombre, apellido, sexo, puesto, usuario, contrasena, direccion, telefono, email, sueldo, rol) 
-                                VALUES (:nombre, :apellido, :sexo, :puesto, :usuario, :contrasena, :direccion, :telefono, :email, :sueldo, :rol)";
->>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
->>>>>>> 8145f10d09b00bee070fd0bfd26c9bbd0b58b963
+
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
         $resultadoQuery->bindParam(':nombre', $personal->nombre, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':apellido', $personal->apellido, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sexo', $personal->sexo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':puesto', $personal->puesto, PDO::PARAM_STR);
-<<<<<<< HEAD
         $resultadoQuery->bindParam(':usuario', $personal->usuario, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
@@ -38,17 +30,6 @@ class PersonalModel extends ModelBase {
         $resultadoQuery->bindParam(':rol', $personal->rol->id, PDO::PARAM_INT);
 
         
-=======
-        $resultadoQuery->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':sueldo', $personal->sueldo, PDO::PARAM_STR);
-        $resultadoQuery->bindParam(':rol', $personal->rol->id, PDO::PARAM_INT);
-
-        try {
-            $resultadoQuery->execute();
->>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
         
             if($resultadoQuery->rowCount() == 1)
         {
@@ -57,21 +38,6 @@ class PersonalModel extends ModelBase {
         else{
             return false;
         }
-        
-<<<<<<< HEAD
-        
-<<<<<<< HEAD
-=======
-=======
-        } catch (PDOException $e) {
-        
-            echo "Error en la consulta: " . $e->getMessage();
-        }
->>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
-
-        
-        
->>>>>>> 8145f10d09b00bee070fd0bfd26c9bbd0b58b963
     }
 
     public function read(){
@@ -118,11 +84,7 @@ class PersonalModel extends ModelBase {
         $resultadoQuery->bindParam(':apellido', $personal->apellido, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':sexo', $personal->sexo, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':puesto', $personal->puesto, PDO::PARAM_STR);
-<<<<<<< HEAD
         $resultadoQuery->bindParam(':usuario', $personal->usuario, PDO::PARAM_STR);
-=======
-        $resultadoQuery->bindParam(':contrasena', $contrasena, PDO::PARAM_STR);
->>>>>>> 7c8975e44570cf8ad47b0cc39a3c8a3984bf8dac
         $resultadoQuery->bindParam(':direccion', $personal->direccion, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':telefono', $personal->telefono, PDO::PARAM_STR);
         $resultadoQuery->bindParam(':email', $personal->email, PDO::PARAM_STR);
