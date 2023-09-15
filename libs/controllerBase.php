@@ -5,9 +5,9 @@ class ControllerBase {
     protected $model;
     protected $isPublic;
 
-    function __construct()
+    function __construct($view = new ViewBase)
     {
-        $this->view = new ViewBase();
+        $this->view = $view();
     }
 
     function loadModel($model){
