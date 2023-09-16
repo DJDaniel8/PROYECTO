@@ -72,12 +72,12 @@ class IngresosController extends ControllerBase{
             $productosJSON = $_POST['stocks'];
 
             $productos = json_decode($productosJSON, true);
-            /*
+            
             $res = $this->model->insert($ingreso);
             $id = $this->model->getLastId();
             
             if($res){
-                $mensaje .= "Producto Insertado con Exito";
+                $mensaje .= "INGRESO Insertado con Exito";
                 if(isset($productos)){
                     foreach($productos as $producto){
                         $stock = new Stock();
@@ -97,13 +97,13 @@ class IngresosController extends ControllerBase{
             else{
                 $mensaje .= "Hubo un erro al insertar el producto";
             }
-            */
+            
         }
         
         
         $respuesta = array(
             'Respuesta' => true,
-            'Mensaje' => "este es el mensaje",
+            'Mensaje' => $mensaje,
             'Valor' => $productosJSON
         );
 
@@ -181,6 +181,22 @@ class IngresosController extends ControllerBase{
 
     function nuevoIngreso(){
         $this->view->render('Ingresos/nuevoIngreso');
+    }
+
+    function productosOfIngresoById(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $id = intval($_POST['id']);
+        }
+        $res = $this->model->getProductosOfIngresoById($id);
+
+        $respuesta = array(
+            'Respuesta' => isset($res),
+            'Mensaje' => "Productos del Ingreso",
+            'Valor' => $res
+        );
+
+        header('Content-Type: application/json');
+        echo json_encode($respuesta);
     }
 }
 

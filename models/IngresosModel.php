@@ -93,10 +93,10 @@ class IngresosModel extends ModelBase {
 
     public function read(){
         $ingresos = array();
-        $query = "SELECT i.ingresoId, i.fecha, t.trabajadorId, t.nombre, t.apellido, p.proveedorId, p.razonSocial FROM Ingresos as i
-                        INNER JOIN [dbo].[Trabajadores] as t ON i.trabajadorId = t.trabajadorId
-                        INNER JOIN [dbo].[Proveedores] as p ON i.proveedorId = p.proveedorId
-                        ORDER BY i.ingresoId desc";
+        $query = "SELECT TOP(10) *, (SELECT SUM(cantidad*preciocompra) FROM Productos_Ingresos
+                    WHERE ingresoId = i.ingresoId) total FROM Ingresos as i
+                    INNER JOIN Proveedores as p ON i.proveedorId = p.proveedorId
+                    ORDER BY i.fecha DESC";
         $conexion = $this->db->connect();
         $resultadoQuery = $conexion->prepare($query);
 
@@ -109,10 +109,9 @@ class IngresosModel extends ModelBase {
             $ingreso->id=$row['ingresoId'];
             $ingreso->fecha=$row['fecha'];
             $ingreso->personal->id=$row['trabajadorId'];
-            $ingreso->personal->nombre=$row['nombre'];
-            $ingreso->personal->apellido=$row['apellido'];
             $ingreso->proveedor->id=$row['proveedorId'];
             $ingreso->proveedor->razonSocial = $row['razonSocial'];
+            $ingreso->total = $row['total'];
             
             array_push($ingresos, $ingreso);
         }
@@ -200,6 +199,32 @@ class IngresosModel extends ModelBase {
         }
 
         return $productos;
+    }
+
+    function getProductosOfIngresoById(int $id){
+        $stocks = array();
+        $query = "SELECT * FROM Productos_Ingresos as pin
+                    INNER JOIN Productos as p ON pin.productoId = p.productoId
+                    WHERE pin.ingresoId = :id";
+        $conexion = $this->db->connect();
+        $resultadoQuery = $conexion->prepare($query);   
+        $resultadoQuery->bindParam(':id', $id, PDO::PARAM_INT);
+
+        
+        $resultadoQuery->execute();
+        
+        while ($row = $resultadoQuery->fetch()) {
+            $stock = new Stock();
+
+            $stock->producto->codigo = $row['codigo'];
+            $stock->producto->nombre=$row['nombre'];
+            $stock->precioCompra=$row['preciocompra'];
+            $stock->stock=$row['cantidad'];
+            
+            array_push($stocks, $stock);
+        }
+
+        return $stocks;
     }
     
 

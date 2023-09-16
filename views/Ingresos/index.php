@@ -139,164 +139,45 @@
     <div class="row">
         <div class="col-md-6">
             
-            <h2>Historial de ventas</h2>
+            <h2>Historial de Ingresos</h2>
             <div class="table-container">
                 <!-- Contenido de la primera tabla -->
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered" id="tablaIngresos">
+                    <thead>
+                        <th>FECHA</th>
+                        <th>PROVEEDOR</th>
+                        <th>TOTAL</th>
+                    </thead>
                     
-                    <th>FECHA</th>
-                    <th>TRABAJADOR ID</th>
-                    <th>PROVEEDOR ID</th>
-
-        
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                 
-                    </tr>
-                    <tr>
-                       
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                       
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                        
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                       
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                        
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                        
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                        
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
-                    <tr>
-                        
-                        <td>Walmart</td>
-                        <td>Q 1,000</td>
-                    </tr>
+                    <tbody>
+                        <?php 
+                        foreach($this->model as $row){
+                            echo '<tr model-data="'.$row->id.'">';
+                            echo "<td>{$row->fecha}</td>";
+                            echo "<td>{$row->proveedor->razonSocial}</td>";
+                            echo "<td>Q{$row->total}</td>";
+                            echo "</tr>";
+                        }
+                    
+                        ?>
+                    </tbody>
               </table>
             </div>
         </div>
         <div class="col-md-6">
-            <h2>Detalles ventas</h2>
+            <h2>Detalle Ingreso</h2>
             <div class="table-container">
-                <table class="table table-hover table-bordered">
-                   
-                    <th>INGRESO ID</th>
-                    <th>PRODUCTO ID</th>
-                    <th>CANTIDAD</th>
-                    <th>PRECIO COMPRA</th>
-                    <th>STOCK ID</th>
+                <table class="table table-hover table-bordered" id="productosIngreso">
+                   <thead>
+                       <th>CODIGO</th>
+                       <th>NOMBRE</th>
+                       <th>CANTIDAD</th>
+                       <th>PRECIO COMPRA</th>
+                    </thead>
 
-        
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>415</td>
-                        <td>10</td>
-                        <td>4545</td>
-                        <td>01</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                       
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
-                    <tr>
-                        
-                        <td>Tenis</td>
-                        <td>3</td>
-                        <td>Q10</td>
-             
-                    </tr>
+                    <tbody id="bodyTablaProductos">
+
+                    </tbody>
             
             </table>
             </div>

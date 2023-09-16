@@ -15,6 +15,7 @@ class Ingreso{
     public string $fecha;
     public Personal $personal;
     public Proveedor $proveedor;
+    public float $total;
 }
 
 ?>
