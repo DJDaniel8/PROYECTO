@@ -1,6 +1,7 @@
 <?php
 
 define('URL', 'http://localhost/PROYECTO/');
+//define('URL', 'https://proyectodesarrolloweb.azurewebsites.net/');
 
 define('HOST', 'proyectserver.database.windows.net');
 define('DB', 'Proyecto');
