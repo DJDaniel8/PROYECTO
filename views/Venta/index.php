@@ -119,64 +119,53 @@
     <h1>Ventas</h1>
     <div class="container">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Busca aqui" aria-describedby="basic-addon2">
+            <input id="inputBuscar" type="text" class="form-control" placeholder="Busca aqui" aria-describedby="basic-addon2" >
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary " type="button" style="height: 45px;"><img src="<?php echo constant('URL') ?>views/img/icons8-búsqueda.gif" style="height: 20px;" alt=""></button>
+              <button class="btn btn-outline-secondary " type="button" style="height: 45px;" id="btnBuscar">
+                <img src="<?php echo constant('URL') ?>views/img/icons8-búsqueda.gif" style="height: 20px;" alt="">
+            </button>
             </div>
           </div>
     </div>
     </div>
     <div class="table-container">
-    <table class="table table-hover table-bordered">
-            
-            <th>NOMBRE</th>
-            <th>PRECIO VENTA</th>
-            <th>CATEGORIA</th>
-            <th>UNIDADES</th>
-            <th>Opcion</th>
+        <table class="table table-hover table-bordered" id="tablaProductos">
+            <thead>
+                <th>CODIGO</th>
+                <th>NOMBRE</th>
+                <th>PRECIO VENTA</th>
+                <th>STOCK</th>
+                <th>Opcion</th>
+            </thead>
 
-            <tr>
+            <tbody id="bodyTablaProductos">
+            </tbody>
 
-                <td>Papel</td>
-                <td>Q 5.00</td>
-                <td>Limpieza</td>
-                <td><input type="number" min="1" pattern="^[0-9]+"></td>
-                <td>
-                    <button type="button" class="btn btn-primary">Agregar</button>
-                </td>
-            </tr>
+        </table>
+    </div>
 
-      </table>
-      </div>
-      <div class="container centrar">
+    <div class="container centrar">
         <div class="container sticky-section">
         <h2>Productos Añadidos</h2>
-        <button type="button" class="btn btn-success">Finalizar</button>
+        <button id="btnFinalizar" type="button" class="btn btn-success">Finalizar</button>
     </div>
     </div>
  
 
     <div class="table-container">   
-    <table class="table table-hover table-bordered">
-        
-        <th>NOMBRE</th>
-        <th>PRECIO VENTA</th>
-        <th>CATEGORIA</th>
-        <th>UNIDADES</th>
-        <th>Opcion</th>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <th>CANTIDAD</th>
+                <th>CODIGO</th>
+                <th>NOMBRE</th>
+                <th>PRECIO</th>
+                <th>Opcion</th>
+            </thead>
 
-        <tr>
+            <tbody id="bodyProductosVenta">
+            </tbody>
 
-            <td>Papel</td>
-            <td>Q 5.00</td>
-            <td>Limpieza</td>
-            <td>545</td>
-            <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-            </td>
-        </tr>
-
-    </table>
+        </table>
     </div>
 
     <div class="container-fluid">
@@ -192,6 +181,7 @@
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="<?php echo constant('URL') ?>views/js/ventaApp.js"></script>
 <script src="<?php echo constant('URL') ?>views/js/table.js"></script> 
 </body>
 </html>

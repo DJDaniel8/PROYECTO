@@ -9,6 +9,11 @@ class StocksController extends ControllerBase{
         $this->isPublic = false;
     }
 
+    function loadModel($model){
+        parent::loadModel($model);
+        $this->Listar();
+    }
+
     function render()
     {
         if($this->isPublic)
@@ -45,6 +50,14 @@ class StocksController extends ControllerBase{
         unset($_SESSION['Rol']);
         session_destroy();
         $this->redirect('Login/');
+    }
+
+    function Listar(){
+        $res = $this->model->getStocks();
+            
+        if(isset($res)){
+            $this->view->model = $res;
+        }   
     }
 }
 

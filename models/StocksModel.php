@@ -1,6 +1,6 @@
 <?php
 
-
+require_once 'models/Stock.php';
 
 class IngresosModel extends ModelBase {
 
@@ -55,6 +55,35 @@ class IngresosModel extends ModelBase {
         }
 
         return $ingresos;
+    }
+
+    public function getStocks(){
+        $stocks = array();
+        $query = "SELECT p.productoId, p.codigo, p.nombre, s.*,
+                    (SELECT STRING_AGG(razonSocial, ', ') FROM Proveedores pr
+                                                            WHERE pr.proveedorId = p.proveedorId) 
+                                                            FROM Stocks as s
+                    INNER JOIN Productos as p ON s.productoId = p.productoId
+                    WHERE s.stock > 0";
+        $conexion = $this->db->connect();
+        $resultadoQuery = $conexion->prepare($query);
+
+        
+        $resultadoQuery->execute();
+        
+        while ($row = $resultadoQuery->fetch()) {
+            $stock = new Stock();
+
+            $stock->producto->codigo=$row['codigo'];
+            $stock->producto->nombre=$row['nombre'];
+            $stock->producto->proveedor->razonSocial=$row['razonSocial'];
+            $stock->stock=$row['stock'];
+            $stock->precioVenta=$row['precio_venta_sugerido'];
+            
+            array_push($stocks, $stock);
+        }
+
+        return $stocks;
     }
 
 

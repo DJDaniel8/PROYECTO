@@ -46,6 +46,30 @@ class VentaController extends ControllerBase{
         session_destroy();
         $this->redirect('Login/');
     }
+
+    function busqueda(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $busqueda = $_POST['busqueda'];
+
+            $res = $this->model->search($busqueda);
+            
+            if($res){
+                $mensaje = "Categoria Actualizada con Exito";
+            }
+            else{
+                $mensaje = "Hubo un error al Actualizar la Categoria";
+            }
+            
+            $respuesta = array(
+                'Respuesta' => isset($res),
+                'Mensaje' => $mensaje,
+                'Valor' => $res
+            );
+            
+            header('Content-Type: application/json');
+            echo json_encode($respuesta);
+        }
+    }
 }
 
 ?>
