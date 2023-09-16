@@ -127,129 +127,32 @@
         </div>
         <div class="table-container">
             <table class="table table-hover table-bordered">
+            <tbody id="CuerpoTabla">
+                    <tr>
+                    <th>PRODUCTO</th>
                     <th>STOCK</th>
                     <th>PRECIO COMPRA</th>
-                    <th>PRECIO VENTA SUGERIDO</th>
-                    <th>PRECIO MINIMO</th>
-                    <th>PRODUCTO ID</th>
+                    <th>PRECIO VENTA MINIMO</th>
+                    <th>PRECIO VENTA</th>
                     <th>OPCIONES</th>
+                    </tr>
 
-                    <tr>
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                       
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                       
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                        <td>Q 9.00</td>
-                        <td>54</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
-                                Actualizar
-                            </button>
-                        </td>
-                    </tr>
+                    <?php
+                    foreach ($this->model as $row) {
+                        echo '<tr model-target="'.$row->id.'">';
+                        echo "<td>{$row->producto->nombre}</td>";
+                        echo "<td>{$row->stock}</td>";
+                        echo "<td>{$row->precioCompra}</td>";
+                        echo "<td>{$row->precioVentaMinimo}></td>";
+                        echo "<td>{$row->precioVenta}</td>";
+                        echo "<td>";
+                        echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->razonSocial."','".$row->direccion."','".$row->telefono."')".'">
+                                    Actualizar
+                                </button>';
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                    ?>
                 </table>
             </div>
     </div>
@@ -260,7 +163,7 @@
 
         <!-- Modal -->
         <form method="post" id="actualizarStocks">
-            <div class="modal" id="miModal">
+            <div class="modal" id="ModalActualizar">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <!-- Encabezado del Modal -->
@@ -272,9 +175,9 @@
                         <div class="modal-body">
                             <div class=" formulario">
                                 <h2>Actualizar Stock</h2>
-                                    <label for="">PRECIO COMPRA</label>
+                                    <label for="">PRODUCTO</label>
                                     <input type="text" id="precioCompra">
-                                    <label for="">PRECIO VENTA SUGERIDO</label>
+                                    <label for="">STOCK</label>
                                     <input type="text" id="precioVenta">
                                     <label for="">PRECIO MINIMO</label>
                                     <input type="text" id="precioMinimo">
