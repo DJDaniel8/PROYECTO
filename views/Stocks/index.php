@@ -134,7 +134,6 @@
                     <th>PRECIO COMPRA</th>
                     <th>PRECIO VENTA MINIMO</th>
                     <th>PRECIO VENTA</th>
-                    <th>OPCIONES</th>
                     </tr>
 
                     <?php
@@ -143,13 +142,8 @@
                         echo "<td>{$row->producto->nombre}</td>";
                         echo "<td>{$row->stock}</td>";
                         echo "<td>{$row->precioCompra}</td>";
-                        echo "<td>{$row->precioVentaMinimo}></td>";
+                        echo "<td>{$row->precioVentaMinimo}</td>";
                         echo "<td>{$row->precioVenta}</td>";
-                        echo "<td>";
-                        echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActualizar" onclick="Actualizar('.$row->id.",'".$row->razonSocial."','".$row->direccion."','".$row->telefono."')".'">
-                                    Actualizar
-                                </button>';
-                        echo "</td>";
                         echo "</tr>";
                     }
                     ?>

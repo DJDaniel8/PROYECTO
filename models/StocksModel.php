@@ -2,7 +2,7 @@
 
 require_once 'models/Stock.php';
 
-class IngresosModel extends ModelBase {
+class StocksModel extends ModelBase {
 
     public function __construct()
     {
@@ -61,7 +61,7 @@ class IngresosModel extends ModelBase {
         $stocks = array();
         $query = "SELECT p.productoId, p.codigo, p.nombre, s.*,
                     (SELECT STRING_AGG(razonSocial, ', ') FROM Proveedores pr
-                                                            WHERE pr.proveedorId = p.proveedorId) 
+                                                            WHERE pr.proveedorId = p.proveedorId) as razonSocial
                                                             FROM Stocks as s
                     INNER JOIN Productos as p ON s.productoId = p.productoId
                     WHERE s.stock > 0";
@@ -74,11 +74,14 @@ class IngresosModel extends ModelBase {
         while ($row = $resultadoQuery->fetch()) {
             $stock = new Stock();
 
+            $stock->id = $row['stockId'];
             $stock->producto->codigo=$row['codigo'];
             $stock->producto->nombre=$row['nombre'];
             $stock->producto->proveedor->razonSocial=$row['razonSocial'];
             $stock->stock=$row['stock'];
+            $stock->precioCompra=$row['precio_compra'];
             $stock->precioVenta=$row['precio_venta_sugerido'];
+            $stock->precioVentaMinimo=$row['precio_minimo'];
             
             array_push($stocks, $stock);
         }
